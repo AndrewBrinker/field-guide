@@ -1,0 +1,112 @@
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+
+<!DOCTYPE html>
+<html class='no-js' lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>
+      Browsers - Web Dev Field Guide
+    </title>
+    <meta content='' name='description'>
+    <meta content='width=device-width' name='viewport'>
+    <link href='../assets/favicon.ico' rel='shortcut icon'>
+    <link href='../assets/apple-touch-icon.png' rel='apple-touch-icon'>
+    <script src='assets/js/vendor/modernizr-2.6.2.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+    <script src='//use.typekit.net/kqc6pwp.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      try{Typekit.load();}catch(e){}
+    </script>
+    <link rel='stylesheet' href='../assets/css/main.css'>
+  </head>
+  <body class='intro'></body>
+</html>
+
+<div id='container'>
+  <main role='main'>
+    <header role='banner'>
+      <h1 class='page-title'>
+        <a href='/'>
+          Browsers
+        </a>
+      </h1>
+    </header>
+    <p>A <strong>web browser</strong> is a software application used for accessing resources on the internet, and various browsers are used by millions of people every day (you are even using one right now). </p>
+
+<p>While there are many little-used web browsers, the main desktop web browsers in use world wide are:</p>
+
+<ul>
+  <li><a href="http://google.com/chrome" title="Chrome Browser - Get a Fast, Free Web Browser">Chrome</a></li>
+  <li><a href="http://mozilla.org/firefox/" title="Mozilla Firefox - Different By Design">Firefox</a></li>
+  <li><a href="http://apple.com/safari/" title="Safari - The Official Apple Web Browser">Safari</a></li>
+  <li><a href="http://opera.com" title="Opera - Start your journey">Opera</a></li>
+  <li><a href="http://windows.microsoft.com/ie" title="Internet Explorer - The Official Microsoft Web Browser">Internet Explorer</a></li>
+</ul>
+
+<p>The <a href="http://browsehappy.com/" title="See current browser versions.">most recent versions</a> of all of these are strong, standards-compliant browsers. However, older versions of these browsers, like Firefox 3 or Internet Explorer 8, are <strong>not</strong> standards compliant. If you are using an old version of one of these browsers, I recommend upgrading to a version that supports the features we&#8217;ll be using throughout this guide.</p>
+
+<h2 id="browser-differences"><a href="#browser-differences" title="Browser Differences">Browser Differences</a></h2>
+
+<p>So, there are five main desktop web browsers. Why are there so many, and what makes them different from each other?</p>
+
+<p>Browsers differ in many ways, including:</p>
+
+<ul>
+  <li>Interface</li>
+  <li>How they handle HTML, CSS, Javascript, and other languages</li>
+  <li>How quickly they run</li>
+  <li>What company makes them</li>
+  <li>How often they are updated</li>
+  <li>How customizable they are</li>
+</ul>
+
+<p>All of these differences are great for consumers, because they have a wide array of options to choose from when picking how they want to access the web.</p>
+
+<p>However, it can be a nightmare for web developers, because instead of there being a single, reliable implementation of the languages we use, there are several widely-used, competing implementations.</p>
+
+<p>But what are these implementations exactly?</p>
+
+<h2 id="rendering-engines">Rendering Engines</h2>
+
+<p>Say hello to rendering engines.</p>
+
+
+  </main>
+</div>
+<footer>
+</footer>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+<script>
+  window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.9.1.min.js"><\/script>')
+</script>
+<!-- scripts -->
+<script src='../assets/js/plugins.js'></script>
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>

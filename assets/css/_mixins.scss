@@ -1,0 +1,148 @@
+/*************************
+ TABLE OF CONTENTS:
+
+   giga - humongous font sizes
+   mega - giant font sizes
+   kilo - big font sizes
+   
+   alpha - h1-style text
+   beta - h2-style text
+   gamma - h3-style text
+   delta - h4-style text
+   epsilon - h5-style text
+   zeta - h6-style text
+   
+   milli - small font sizes
+   
+   amp - an awesome ampersand
+   ir - image replacement
+   hidden - not even in the DOM
+   visuallyhidden - can't see it
+   invisible - completely invisible
+   clearfix - yes, there's a clearfix
+ 
+ ************************/
+
+
+%giga {
+    font-size: 80px;
+    font-size: 5rem;
+    line-height: 1.2; 
+}
+
+%mega {
+    font-size: 64px;
+    font-size: 4rem;
+    line-height: 1.125;
+}
+
+%kilo {
+    font-size: 48px;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+%alpha {
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+%beta {
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+%gamma {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+%delta {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.333;
+}
+
+%epsilon {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+%zeta {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+%milli {
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 2;
+}
+
+%amp {
+    font-weight: 500;
+    font-style: italic;
+    font-family: Baskerville, Palatino, "Book Antiqua", serif;
+}
+
+%ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+    
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
+}
+
+%hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+%visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+%visuallyhidden.focusable:active,
+%visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+%invisible {
+    visibility: hidden;
+}
+
+%clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    
+    &:after {
+        clear: both;
+    }
+    
+    *zoom: 1
+}
