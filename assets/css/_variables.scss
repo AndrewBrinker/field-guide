@@ -1,18 +1,16 @@
 // Colors
-$background-color: #fff;
+$background-color: #ccc;
 $text-color: #444;
-$accent-color: #EB6841;
-$accent-hover-color: #CC333F;
+$accent-color: #FF4040;
+$accent-hover-color: #556270;
 $accent-color-2: $accent-hover-color;
 
 // Sizes
 $font-size: 16px;
 
 // Font Families
-$font-family: "source-sans-pro", Verdana, Helvetica, Arial, sans-serif;
-$font-family-2: "skolar", Georgia, "Times New Roman", Times, serif;
+$font-family: "chaparral-pro", Georgia, "Times New Roman", Times, serif;
+$font-family-2: "proxima-nova-extra-condensed", Helvetica, Arial, sans-serif;
 
 // Neat
-$max-width: 680px;
-$grid-columns: 8;
 $gutter: 2.5em;

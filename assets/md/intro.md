@@ -1,3 +1,6 @@
+<p class='lede'>Welcome to a grand new adventure.</p>
+
+
 The Web Development Field Guide is a web-based book intended to provide readers the knowledge and resources needed to become professional web developers.
 
 <h2 id='why-this-exists'><a href='#why-this-exists' title='Why This Exists'>Why This Exists</a></h2>
@@ -12,7 +15,7 @@ This book was made to be a single source of information, with a mix of text, scr
 
 The book is a constant work in progress, and if you have any suggestions or corrections, please feel free to [get in touch with me][contact].
 
-<h2 id='who-its-for'><a href='#why-its-for' title="Who It's For">Who It's For</a></h2>
+<h2 id='who-its-for'><a href='#who-its-for' title="Who It's For">Who It's For</a></h2>
 
 This book is for anyone and everyone with an interest in web development. The web is a platform of equal opportunity, and this book is written with the varying skills of readers in mind. If you are worried about not knowing enough, or not being ready, don't worry.
 
@@ -25,9 +28,5 @@ This book doesn't want to push any particular paradigm or methodology for develo
 <h2 id='final-welcome'><a href='#final-welcome' title="Final Welcome">Final Welcome</a></h2>
 
 With all that out of the way, prepare to enter the wilds of web development. Bring your paper, your pencil, and be ready to learn. This book may move quickly at time, so never feel pressured to move more quickly than you are ready for. If at any point something isn't clear, feel free to google it, or ask on Stack Overflow, or ask on Twitter, or anywhere else you want to ask. The web development community is very helpful, and I guarantee that someone can help you with whatever you're stuck on.
-
-<hr>
-
-<a href='/browsers' title='Browsers' class='note'>So let's begin.</a>
 
 [contact]: http://andrewbrinker.com/#about "Contact the author"

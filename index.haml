@@ -6,13 +6,14 @@
 -# Main content goes here.
 
 #container
+    %sidebar
+        <!-- @include toc -->
     %main(role='main')
         %header(role='banner')
-            %h1.logo
+            %h1.page-title
                 %a(href='/')
-                    Web Dev Field Guide
-                    %small A web-book by Andrew Brinker
-        <!-- @include welcome -->
-        <!-- @include toc -->
+                    Web Development
+        .content.welcome
+            <!-- @include intro -->
 
 <!-- @include _footer -->

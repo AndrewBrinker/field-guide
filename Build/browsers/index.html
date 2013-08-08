@@ -1,0 +1,175 @@
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+
+<!DOCTYPE html>
+<html class='no-js' lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>
+      Browsers - Web Dev Field Guide
+    </title>
+    <meta content='' name='description'>
+    <meta content='width=device-width' name='viewport'>
+    <link href='../assets/favicon.ico' rel='shortcut icon'>
+    <link href='../assets/apple-touch-icon.png' rel='apple-touch-icon'>
+    <script src='assets/js/vendor/modernizr-2.6.2.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+    <script src='//use.typekit.net/kqc6pwp.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      try{Typekit.load();}catch(e){}
+    </script>
+    <link rel='stylesheet' href='../assets/css/main.css'>
+  </head>
+  <body class='browsers'></body>
+</html>
+
+<div id='container'>
+  <sidebar>
+    <nav class='table-of-contents' role='navigation'>
+  <ol>
+    <li>
+      <h4 id="a-href-titleintroduction-idintrointroductiona"><a href="/" title="Introduction" id="intro">Introduction</a></h4>
+      <ol>
+        <li><a href="/#why-this-exists" title="Why This Exists">Why This Exists</a></li>
+        <li><a href="/#who-its-for" title="Who It's For">Who It&#39;s For</a></li>
+        <li><a href="/#paradigm-agnosticism" title="Paradigm Agnosticism">Paradigm Agnosticism</a></li>
+        <li><a href="/#final-welcome" title="Final welcome">Final Welcome</a></li>
+      </ol>
+    </li>
+    <li>
+      <h4 id="a-hrefbrowsers-titlebrowsers-idbrowsersbrowsersa"><a href="/browsers" title="Browsers" id="browsers">Browsers</a></h4>
+      <ol>
+        <li><a href="/browsers#how-theyre-made" title="How They're Made?">How They&#39;re Made</a></li>
+        <li><a href="/browsers#browsers-and-the-spec" title="Browsers and the Spec">Browsers and the Spec</a></li>
+        <li><a href="/browsers#browser-differences" title="Browser Differences">Browser Differences</a></li>
+        <li><a href="/browsers#rendering" title="Rendering">Rendering</a></li>
+        <li><a href="/browsers#the-cache" title="The Cache">The Cache</a></li>
+      </ol>
+    </li>
+    <li>
+      <h4 id="a-hrefhtml-titlehypertext-markup-language-idhtmlhtmla"><a href="/html" title="HyperText Markup Language" id="html">HTML</a></h4>
+      <ol>
+        <li><a href="/html#history" title="History of HTML">History</a></li>
+        <li><a href="/html#tags" title="Tags">Tags</a></li>
+        <li><a href="/html#attributes" title="Attributes">Attributes</a></li>
+        <li><a href="/html#microformats" title="Microformats">Microformats</a></li>
+        <li><a href="/html#syndication" title="Syndication">Syndication</a></li>
+        <li><a href="/html#semantics" title="Semantics">Semantics</a></li>
+        <li><a href="/html#validation" title="Validation">Validation</a></li>
+        <li><a href="/html#html5">HTML5</a></li>
+      </ol>
+    </li>
+    <li>
+      <h4 id="a-hrefcss-titlecascading-stylesheets-idcsscssa"><a href="/css" title="Cascading StyleSheets" id="css">CSS</a></h4>
+      <ol>
+        <li><a href="/css#the-cascade" title="The Cascade">The Cascade</a></li>
+        <li><a href="/css#what-styles-are-made-of" title="What Styles Are Made Of">What Styles Are Made Of</a></li>
+        <li><a href="/css#responsive-web-design" title="Responsive Web Design">Responsive Web Design</a></li>
+        <li><a href="/css#scalable-css" title="Scalable CSS">Scalable CSS</a></li>
+        <li><a href="/css#preprocessors" title="Preprocessors">Preprocessors</a></li>
+      </ol>
+    </li>
+    <li>
+      <h4 id="a-hrefconclusion-titleconclusion-idconclusionconclusiona"><a href="/conclusion" title="Conclusion" id="conclusion">Conclusion</a></h4>
+      <ol>
+        <li><a href="/conclusion#review" title="Review">Review</a></li>
+        <li><a href="/conclusion#build-real-things" title="Build Real Things">Build Real Things</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+
+  </sidebar>
+  <main role='main'>
+    <header role='banner'>
+      <h1 class='page-title'>
+        <a href='/'>
+          Browsers
+        </a>
+      </h1>
+    </header>
+    <div class='content'>
+      <figure class="blockquote">
+<blockquote>History is the greatest and most authentic story we&rsquo;ve ever told, even the parts that are untrue.</blockquote>
+<figcaption>Eric Meyer, <a href="http://meyerweb.com/eric/thoughts/2012/09/11/the-web-behind/" title="The Web Behind" class="external">The Web Behind</a></figcaption>
+</figure>
+
+<p>A <strong>web browser</strong> is a software application used for accessing resources on the internet, and various browsers are used by millions of people every day (you are even using one right now). </p>
+
+<p>While there are many little-used web browsers, the main desktop web browsers in use world wide are:</p>
+
+<ul>
+  <li><a href="http://google.com/chrome" title="Chrome Browser - Get a Fast, Free Web Browser">Chrome</a></li>
+  <li><a href="http://mozilla.org/firefox/" title="Mozilla Firefox - Different By Design">Firefox</a></li>
+  <li><a href="http://apple.com/safari/" title="Safari - The Official Apple Web Browser">Safari</a></li>
+  <li><a href="http://opera.com" title="Opera - Start your journey">Opera</a></li>
+  <li><a href="http://windows.microsoft.com/ie" title="Internet Explorer - The Official Microsoft Web Browser">Internet Explorer</a></li>
+</ul>
+
+<p>The <a href="http://browsehappy.com/" title="See current browser versions" class="external">most recent versions</a> of all of these are strong, standards-compliant browsers. However, older versions of these browsers, like Firefox 3 or Internet Explorer 8, are <strong>not</strong> standards compliant. If you are using an old version of one of these browsers, I recommend upgrading to a version that supports the features we&#8217;ll be using throughout this guide.</p>
+
+<h2 id="browser-differences"><a href="#browser-differences" title="Browser Differences">Browser Differences</a></h2>
+
+<p>So, there are five main desktop web browsers. Why are there so many, and what makes them different from each other?</p>
+
+<p>Browsers differ in many ways, including:</p>
+
+<ul>
+  <li>Interface</li>
+  <li>How they handle HTML, CSS, Javascript, and other languages</li>
+  <li>How quickly they run</li>
+  <li>What company makes them</li>
+  <li>How often they are updated</li>
+  <li>How customizable they are</li>
+</ul>
+
+<p>All of these differences are great for consumers, because they have a wide array of options to choose from when picking how they want to access the web.</p>
+
+<p>However, it can be a nightmare for web developers, because instead of there being a single, reliable implementation of the languages we use, there are several widely-used, competing implementations.</p>
+
+<p>But what are these implementations exactly?</p>
+
+<h2 id="rendering-engines">Rendering Engines</h2>
+
+<p>Say hello to rendering engines.</p>
+
+
+    </div>
+  </main>
+</div>
+<footer>
+</footer>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+<script>
+  window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.9.1.min.js"><\/script>')
+</script>
+<!-- scripts -->
+<script src='../assets/js/plugins.js'></script>
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>

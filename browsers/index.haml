@@ -1,16 +1,19 @@
 <!-- @reload -->
 <!-- $title Browsers - Web Dev Field Guide -->
-<!-- $bodyClass intro -->
+<!-- $bodyClass browsers -->
 <!-- @include _header -->
 
 -# Main content goes here.
 
 #container
+    %sidebar
+        <!-- @include toc -->
     %main(role='main')
         %header(role='banner')
             %h1.page-title
                 %a(href='/')
                     Browsers
-        <!-- @include browsers -->
+        .content
+            <!-- @include browsers -->
 
 <!-- @include _footer -->
