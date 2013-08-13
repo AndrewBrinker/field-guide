@@ -1,5 +1,13 @@
-%footer
-    -# Footer content goes here.
+%footer.footer-container
+    %a.nav-button(data-hook='show-toc') View the Table of Contents
+    .footer
+        .about.vcard
+            %p The Web Development Field Guide is a project by <a class='url fn' href='http://andrewbrinker.com' target='_blank' title='Andrew Brinker'>Andrew Brinker</a>, &copy; 2013 all rights reserved.
+        .footer-notes
+            %p You are reading <span class='version-number'>version 0.2</span> of the field guide. Things are constantly being updated. Check back often for new and improved content.
+            
+            
+    
 
 %script(src = "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
 %script
@@ -7,6 +15,7 @@
 
 <!-- scripts -->
 <!-- @javascript plugins -->
+<!-- @javascript main -->
 
 %script
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

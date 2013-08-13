@@ -1,0 +1,30 @@
+/*------------------------------------*
+    $HEADINGS
+ *------------------------------------*/
+
+h1, .alpha   { @include font-size($h1-size);   }
+h2, .beta    { @include font-size($h2-size);   }
+h3, .gamma   { @include font-size($h3-size);   }
+h4, .delta   { @include font-size($h4-size);   }
+h5, .epsilon { @include font-size($h5-size);   }
+h6, .zeta    { @include font-size($h6-size);   }
+    .giga    { @include font-size($giga-size); }
+    .mega    { @include font-size($mega-size); }
+    .kilo    { @include font-size($kilo-size); }
+
+%amp {
+    font-weight: 500;
+    font-style: italic;
+    font-family: Baskerville, Palatino, "Book Antiqua", serif;
+}
+
+p a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid $brand-color;
+    
+    &:hover,
+    &:focus {
+        border-bottom: 1px solid $brand-accent-color;
+    }
+}

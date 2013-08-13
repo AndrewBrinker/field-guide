@@ -5,7 +5,12 @@ The Web Development Field Guide is a web-based book intended to provide readers 
 
 <h2 id='why-this-exists'><a href='#why-this-exists' title='Why This Exists'>Why This Exists</a></h2>
 
+<div class='reference-container'>
+<aside>
+    <p>See a list of resources in the <a href='/references' title='References'>references</a> section.</p>
+</aside>
 Web development is a discipline with a lot of resources available around the web, but individuals trying to enter the fields encounter several problems:
+</div>
 
 - The books on web development are often outdated
 - Googling is too haphazard

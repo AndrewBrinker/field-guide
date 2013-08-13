@@ -53,8 +53,8 @@ textarea {
 body {
     margin: 0;
     font: {
-        size: $font-size;
-        family: $font-family;
+        size: $base-font-size;
+        family: $brand-primary-font;
     }
     line-height: 1.5em;
     color: $text-color;
@@ -62,12 +62,12 @@ body {
 }
 
 a {
-    color: $accent-color;
+    color: $brand-color;
     text-decoration: underline;
     
     &:hover,
     &:focus {
-        color: $accent-hover-color;
+        color: $brand-accent-color;
     }
 
     &:focus {
@@ -130,7 +130,10 @@ dfn {
 hr {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
-    height: 0;
+    padding: 0;
+    margin: 1.5em 0;
+    border: 0;
+    border-top: 1px solid #ccc;
 }
 
 mark {

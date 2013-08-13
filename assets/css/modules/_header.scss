@@ -1,0 +1,5 @@
+.header {
+    @include outer-container;
+    border-bottom: 4px solid #ccc;
+    padding-top: 2em;
+}

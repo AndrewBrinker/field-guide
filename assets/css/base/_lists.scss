@@ -1,0 +1,26 @@
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: decimal;
+    counter-reset: item;
+    
+    li {
+        display: block;
+        
+        & > ol {
+            padding-left: .9em;
+        }
+        
+        h4 { display: inline; }
+        &::before {
+            content: counters(item, ".") ". ";
+            counter-increment: item;
+            -webkit-font-smoothing: antialiased;
+            font-family: $brand-secondary-font;
+        }
+    }
+}
+
+ul {
+    list-style-type: circle;
+}

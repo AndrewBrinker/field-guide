@@ -1,0 +1,19 @@
+.reference-container {
+    position: relative;
+}
+
+    aside {
+        width: 147px;
+        position: absolute;
+        top: 0;
+        left: -177px;
+    
+        font-size: $milli-size;
+        font-style: italic;
+        color: #999;
+        text-align: right;
+        
+        p {
+            margin-top: 0;
+        }
+    }

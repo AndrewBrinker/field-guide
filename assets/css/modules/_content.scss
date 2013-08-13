@@ -1,0 +1,33 @@
+.content-wrap {
+    @include outer-container;
+}
+
+    .content {
+        padding: 4em 0;
+        @include span-columns(8);
+        @include shift(2);
+        
+        h2 {
+            font-family: $brand-secondary-font;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            margin: 2em 0 1em;
+            -webkit-font-smoothing: antialiased;
+            
+            a {
+                text-decoration: none;
+                
+                &::after {
+                    content: "right-click for link.";
+                    @include font-size($h5-size);
+                    padding-left: 1em;
+                    text-transform: none;
+                    font-family: $brand-primary-font;
+                    font-weight: 500;
+                    font-style: italic;
+                    color: #999;
+                    -webkit-font-smoothing: subpixel-antialiased;
+                }
+            }
+        }
+    }

@@ -9,7 +9,7 @@
         %meta(name = "viewport" content = "width=device-width")
 
         %link(href = "<!-- @path favicon.ico -->" rel = "shortcut icon")
-        %link(href = "<!-- @path apple-touch-icon.png -->" rel = "apple-touch-icon")
+        %link(href = "<!-- @path apple-touch-icon-precomposed.png -->" rel = "apple-touch-icon-precomposed")
         
         %script(src = "assets/js/vendor/modernizr-2.6.2.min.js")
         %script(src = "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js")
@@ -22,3 +22,17 @@
         -# Loading the stylesheets
         <!-- @stylesheet main -->
     %body(class = "<!-- $bodyClass | page -->")
+    
+        %section#toc.toc-container.is-hidden
+            %header.toc-header
+                %h3 The Table of Contents
+                %a.nav-button(data-hook='hide-toc') Hide the Table of Contents
+            .toc <!-- @include toc -->
+            
+        %header.header(role='banner')
+            %h1.logo
+                %a(href='/' title='Web Development, A Field Guide')
+                    %mark Web Development:
+                    A Field Guide
+            %nav.page-nav(role='navigation')
+                %a.nav-button(data-hook='show-toc') View the Table of Contents

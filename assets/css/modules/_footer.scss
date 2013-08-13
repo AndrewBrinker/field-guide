@@ -1,0 +1,23 @@
+.footer-container {
+    @include outer-container;
+    border-top: 4px solid #ccc;
+    padding-bottom: 6em;
+    margin-top: 4em;
+
+    .nav-button {
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+    .footer {
+        @include fill-parent;
+        @include font-size($h5-size);
+        
+        .footer-notes {
+            @include span-columns(6);
+            @include omega();
+            padding-top: .5em;
+        }
+    }
