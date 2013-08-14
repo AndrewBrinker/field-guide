@@ -1,13 +1,18 @@
 .footer-container {
     @include outer-container;
-    border-top: 4px solid #ccc;
-    padding-bottom: 6em;
-    margin-top: 4em;
+    border-top: 4px solid $brand-color;
+    margin-top: 2em;
 
     .nav-button {
         display: block;
         text-align: center;
         border-bottom: 1px solid #ccc;
+        color: $brand-color;
+        
+        &:hover,
+        &:focus {
+            color: $brand-accent-color;
+        }
     }
 }
 
@@ -19,5 +24,6 @@
             @include span-columns(6);
             @include omega();
             padding-top: .5em;
+            padding-bottom: 4em;
         }
     }

@@ -28,3 +28,8 @@ p a {
         border-bottom: 1px solid $brand-accent-color;
     }
 }
+
+p b,
+p strong {
+    -webkit-font-smoothing: antialiased;
+}
