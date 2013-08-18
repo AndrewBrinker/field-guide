@@ -33,3 +33,11 @@ p b,
 p strong {
     -webkit-font-smoothing: antialiased;
 }
+
+abbr {
+    cursor: help;
+}
+
+mark {
+    background-color: rgba(255,255,0,.15);
+}

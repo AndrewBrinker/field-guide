@@ -17,23 +17,19 @@
 %h2#accessing-a-page
     %a(href='#accessing-a-page' title='Accessing A Page') Accessing A Page
 
-%p A <strong>web browser</strong> is a software application used for accessing resources on the internet, and various browsers are used by millions of people every day (you are even using one right now). 
-
-%p While there are many little-used web browsers, the main desktop web browsers in use world wide are:
+.reference-container
+    %aside
+        %p For more information, check out <a href='http://technet.microsoft.com/en-us/library/cc772774(v=ws.10).aspx' title='How DNS Works'>Microsoft&rsquo;s explanation</a> of DNS.
+    %p When you type a <abbr title='Uniform Resource Locator'>URL</abbr> into your browser&rsquo;s address bar, your browser contacts the Domain Name System. This is essentially a giant list of URLs and associated IP Addresses. Next your browser takes the IP Address given by the Domain Name System and contacts it. This IP Address is the unique identifier for a web server, which is a computer setup to handle web pages. When the web server is contacted it looks up whatever page the browser is asking for and gives it to the browser.
+    
+%p Let&rsquo;s review:
 
 %ul
-    %li 
-        %a(href='http://google.com/chrome' title='Get a Fast, Free Web Browser!') Chrome
-    %li
-        %a(href='http://mozilla.org/firefox' title='Mozilla Firefox - Different By Design') Firefox
-    %li
-        %a(href='http://apple.com/safari' title='Safari - The Official Apple Web Browser') Safari
-    %li
-        %a(href='http://opera.com' title='Opera - Start Your Journey') Opera
-    %li
-        %a(href='http://windows.microsoft.com/ie' title='Internet Explorer - The Official Microsoft Web Browser') Internet Explorer
+    %li Your browser contacts the Domain Name System and asks for an IP Address for the URL you type in.
+    %li The Domain Name System gives the browser the IP Address, and your browser goes to that address.
+    %li Your browser requests the web page you want, and the web server at the IP Address gives that page to the browser.
 
-%p The <a href='http://browsehappy.com/' title='See current browser versions' class='external'>most recent versions</a> of all of these are strong, standards-compliant browsers. However, older versions of these browsers, like Firefox 3 or Internet Explorer 8, are <strong>not</strong> standards compliant. If you are using an old version of one of these browsers, I recommend upgrading to a version that supports the features we&rsquo;ll be using throughout this guide.
+%p That&rsquo;s how a page is accessed.
 
 
 
@@ -47,23 +43,47 @@
 %h2#browser-differences
     %a(href='#browser-differences' title='Browser Differences') Browser Differences 
 
-%p So, there are five main desktop web browsers. Why are there so many, and what makes them different from each other?
+%p That&rsquo;s a pretty standard process, and the various internet browsers around don&rsquo;t differ much in how they do all of that stuff. But when the web server gives the browser the web page you asked for, it isn't usually in a nice format the browser can immediately display. It&rsquo;s in something like HTML and CSS, which need to be processed by the browser before they can be displayed. That&rsquo;s where browsers start to get different.
 
-%p Browsers differ in many ways, including:
+.reference-container
+    %aside
+        %p Browser rendering engines have been in flux lately. If you&rsquo;re interested, <a href='http://www.theguardian.com/technology/2013/apr/05/blink-google-rendering-browser' title='The Browser Wars Are Back' target='_blank'>learn more</a>.
+    %p Each browser contains what is called a rendering engine (or a layout engine). The rendering engine is the part of the browser that processes code and turns it into something displayable. Currently there are four main rendering engines: Webkit, Gecko, Trident, and Blink. Their usage is as follows:
 
 %ul
-    %li Interface
-    %li How they handle HTML, CSS, Javascript, and other languages
-    %li How quickly they run
-    %li What company makes them
-    %li How often they are updated
-    %li How customizable they are
+    %li Webkit: Safari and Opera
+    %li Gecko: Firefox
+    %li Trident: Internet Explorer
+    %li Blink: Chrome
+    
+%p Each of these rendering engines handles the rendering of web pages differently, and so results may vary between different engines.
 
-%p All of these differences are great for consumers, because they have a wide array of options to choose from when picking how they want to access the web.
+%p But wait? Isn&rsquo;t there a specification for all this stuff? How can they all be different?
 
-%p However, it can be a nightmare for web developers, because instead of there being a single, reliable implementation of the languages we use, there are several widely-used, competing implementations.
+%p The answer is complicated.
 
-%p But what are these implementations exactly?
+
+
+
+
+-#----------------------------
+-# BROWSERS AND THE SPEC
+-#----------------------------
+
+%h2#browsers-and-the-spec
+    %a(href='#browsers-and-the-spec' title='Browsers and the Spec') Browsers and the Spec
+        
+%p There are in fact specifications for both HTML and CSS. Both are maintained by an organization called the <abbr title='World Wide Web Consortium'>W3C</abbr> &mdash; in partnership with the <abbr title='Web Hypertext Application Technology Working Group'>WHATWG</abbr> for the HTML spec. These specifications are worked on in a collaborative process between a large number of stakeholders, and these specifications are intended to provide exact explanations of how implementors &mdash; read: people who make browsers &mdash; should handle the code they receive. However, not everything gets implemented the way the spec-writers want it to, usually due to strategic decisions by the browser makers. So we end up with a spec that generally matches what the browsers do, but with enough differences between browsers to cause some headaches.
+
+.reference-container
+    %aside
+        %p Check out <a href='http://caniuse.com/' title='caniuse.com' target='_blank'>caniuse.com</a> for detailed reports on browser support.
+    %p How do we work in a world like this? The answer is simple: <em>the spec doesn't matter, what&rsquo;s implemented does</em>.
+
+%p That may seem counter-intuitive, but remember, the spec isn&rsquo;t for web developers, it&rsquo;s for the browser makers. No matter how great the proposed features are, if they don&rsquo;t work in a browser your site&rsquo;s users regularly use, you can&rsquo;t use them.
+
+%p So what makes the browsers so different, and how is a page actually displayed once retrieved by the browser? The answer is rendering engines.
+
 
 
 
@@ -77,4 +97,24 @@
 %h2#rendering-engines
     %a(href='#rendering-engines' title='Rendering Engines') Rendering Engines
 
-%p Say hello to rendering engines.
+.reference-container
+    %aside
+        %p For a more in-depth explanation, check out <a href='http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/' title='How Browsers Work - HTML5 Rocks'>&ldquo;How Browsers Work&rdquo;</a> by HTML5 Rocks.
+    %p Rendering engines are the part of a web browser that process the files the browser retrieves and turns them into something that can be displayed. In the case of HTML and CSS, the process works like this:
+
+%ol
+    %li Turn the HTML into a tree of nodes called the <abbr title='Document Object Model'>DOM</abbr> tree
+    %li Turn the DOM tree into a tree of displayable objects called the &ldquo;render tree&rdquo;
+    %li Layout the render tree
+    %li Paint the render tree using the proper CSS styles
+    
+%figure.image
+    %img(src='<!-- @path webkit.webp -->' alt="A diagram depicting Webkit's rendering flow.")
+    %figcaption
+        A diagram depicting Webkit&rsquo;s rendering flow.
+
+%p Above is a diagram with a more detailed explanation of rendering. Let&rsquo;s walk through it step-by-step.
+            
+
+
+

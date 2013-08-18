@@ -4,8 +4,7 @@
     padding: 2em 0;
     font-size: $milli-size;
     line-height: 1.5em;
-    box-shadow: rgba(0,0,0,.15) 0 0 0 1px,
-                rgba(0,0,0,.25) 0 1px 3px;
+    box-shadow: rgba(0,0,0,.15) 0 0 0 1px;
     
     position: fixed;
     top: 0;
@@ -14,7 +13,11 @@
     
     z-index: 100;
     
-    @include transition(top .25s linear);
+    display: block;
+    
+    @include transition(opacity .1s linear);
+    
+    pointer-events: all;
     
     a {
         color: #444;

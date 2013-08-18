@@ -13,7 +13,6 @@
  */
 
 
-
 /*------------------------------------*
     $Mixin Import
  *------------------------------------*/
@@ -42,7 +41,7 @@ $brand-accent-color: #BF4D28;
  *------------------------------------*/
 
 $base-font-size:    20px!default;
-$base-line-height:  px(1.5)!default;
+$base-line-height:  px(1.667)!default;
 
 $giga-size:         px(5)!default;
 $mega-size:         px(4)!default;
@@ -110,6 +109,14 @@ $gutter: em(40px);
  *------------------------------------*/
 
 /**
+ * External libraries
+ */
+
+@import 'lib/neat';
+@import 'lib/prism';
+
+
+/**
  * Base Styles
  */
 
@@ -119,13 +126,7 @@ $gutter: em(40px);
 @import 'base/lists';
 @import 'base/clearfix';
 @import 'base/disable';
-
-
-/**
- * External libraries
- */
-
-@import 'lib/neat';
+@import 'base/images';
 
 
 /**
@@ -152,6 +153,8 @@ $gutter: em(40px);
 @import 'state/hiding';
 @import 'state/print';
 @import 'state/current-page';
+@import 'state/tooltip';
+@import 'state/show-toc';
 
 
 

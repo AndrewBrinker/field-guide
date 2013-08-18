@@ -4,6 +4,10 @@ ol {
     list-style: decimal;
     counter-reset: item;
     
+    &.spaced li {
+        margin: 1em 0;
+    }
+    
     li {
         display: block;
         

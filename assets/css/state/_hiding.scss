@@ -1,10 +1,3 @@
-.is-hidden {
-    top: -1000px;
-    left: 0;
-    @include transition(top .25s linear);
-}
-
-
 %ir {
     background-color: transparent;
     border: 0;

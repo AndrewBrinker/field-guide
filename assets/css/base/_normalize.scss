@@ -56,7 +56,7 @@ body {
         size: $base-font-size;
         family: $brand-primary-font;
     }
-    line-height: 1.5em;
+    line-height: $base-line-height;
     color: $text-color;
     background: $background-color;
 }
