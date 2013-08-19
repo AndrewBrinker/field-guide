@@ -101,19 +101,67 @@
     %aside
         %p For a more in-depth explanation, check out <a href='http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/' title='How Browsers Work - HTML5 Rocks'>&ldquo;How Browsers Work&rdquo;</a> by HTML5 Rocks.
     %p Rendering engines are the part of a web browser that process the files the browser retrieves and turns them into something that can be displayed. In the case of HTML and CSS, the process works like this:
-
-%ol
-    %li Turn the HTML into a tree of nodes called the <abbr title='Document Object Model'>DOM</abbr> tree
-    %li Turn the DOM tree into a tree of displayable objects called the &ldquo;render tree&rdquo;
-    %li Layout the render tree
-    %li Paint the render tree using the proper CSS styles
     
 %figure.image
     %img(src='<!-- @path webkit.webp -->' alt="A diagram depicting Webkit's rendering flow.")
     %figcaption
-        A diagram depicting Webkit&rsquo;s rendering flow.
+        Webkit&rsquo;s rendering flow.
+    
+%ol
+    %li
+        First the HTML and CSS are parsed
+        %ol
+            %li The HTML is turned into a DOM tree, a tree of parent and children nodes
+            %li The CSS is turned into a collection of Style Rules, also called the <abbr title='CSS Object Model'>CSSOM</abbr>
+    %li The Style Rules are applied to the DOM tree, creating the render tree
+    %li The render tree is laid out on the screen, painted, and displayed
 
-%p Above is a diagram with a more detailed explanation of rendering. Let&rsquo;s walk through it step-by-step.
+%p That&rsquo;s the rendering flow for Webkit, but the general flow is similar between browsers. Where the browsers truly diverge is in what HTML, CSS, and Javascript features they have implemented.
+
+
+
+
+
+
+-#----------------------------
+-# CACHING
+-#----------------------------
+
+%h2#caching
+    %a(href='#caching' title='Caching') Caching
+
+%p In &ldquo;<a href='#accessing-a-page' title='Accessing A Page'>Accessing a Page</a>&rdquo; you learned how web browsers load pages, but that&rsquo;s now always how it works. To improve load times web browsers store documents and if those documents are recent, use them instead of accessing the page again. This is called Caching and it helps browsers speed up access to sites you visit most often. However, it can also cause development headaches when you update a page but the browser loads a cached version instead. How do we avoid that?
+    
+%p The answer is cachebusting: a practice to force the browser to load a new version of a document. There are two easy ways to implement cachebusting: query strings and mod_rewrite. The first should work no matter what server type you are using, the second is restricted to an Apache server.
+
+.reference-container
+    %aside
+        %p The query string method is problematic. Read <a href='http://stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring' title='Revving Filenames: donÕt use querystring'>Steve Souders&rsquo; article</a> to learn more.
+    %p The query string approach uses query strings &mdash; normally used for passing information between pages &mdash; to apply versions to filenames. Each time the file is updated the query string is changed. When the browser checks the cached page the query string of the old page doesn&rsquo;t match the one for the new page, so the new page is loaded.
+
+%p The mod_rewrite method is similar, but actually uses different filenames &mdash; without query strings &mdash; which are rewritten in the browser to the intended filename. On an Apache server, the code to do so looks like this:
+
+%pre.line-numbers
+    %code.language-http
+        :escaped
+            <IfModule mod_rewrite.c>
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteRule ^(.+)\.(\d+)\.(js|css|png|jpg|gif)$ $1.$3 [L]
+            </IfModule>
+
+%p Enable mod_rewrite on your Apache server and add that to your server configuration (either the global <code class='language-http'>httpd.conf</code> file or a local <code class='language-http'>.htaccess</code> file).
+
+
+
+
+
+
+
+
+
+
+
+
             
 
 
