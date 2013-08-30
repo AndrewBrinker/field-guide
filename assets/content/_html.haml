@@ -1,0 +1,212 @@
+%p.lede Strongly structured content for a weakly structured web.
+
+
+
+
+%h2#history
+    %a(href='#history' title='History') History
+        
+.reference-container
+    %aside
+        %p Read more history in &ldquo;<a href='http://alistapart.com/article/a-brief-history-of-markup' title='A Brief History of Markup'>A&nbsp;Brief&nbsp;History&nbsp;of Markup</a>&rdquo;, from the excellent <a href='http://www.abookapart.com/products/html5-for-web-designers' title='HTML5 for Web Designers'>HTML5 for Web Designers</a>.
+    %p HTML is a language with a fraught history. Competing specifications, implementations that compete with, ignore, or add to the spec, fighting within the standards group itself. It is not a simple tale. In the interest of brevity, I will share here only the good portions:
+
+%ul
+    %li Sir Tim Berners-Lee, inventor of the World Wide Web, created a document called &ldquo;HTML Tags&rdquo; in 1991. This never became a formal specification.
+    %li Not long after, the <abbr title='Internet Engineering Task Force'>IETF</abbr> created the first HTML spec: HTML 2.0.
+    %li The IETF soon handed the spec over to the W3C, which kept updating HTML all the way to HTML 4.0.
+    %li The W3C, wanting greater consistency between HTML and <abbr title='eXtensible Markup Language'>XML</abbr> (another language they managed), created <abbr title='eXtensible HyperText Markup Language'>XHTML</abbr> 1.0, a stricter variant of HTML 4.0.
+    %li The W3C then published XHTML 1.1, and all hell broke loose. Children cried in their beds, the streets ran red with the blood of the innocent, and some backwards compatibility was lost.
+    %li The W3C then began work on XHTML 2.0, unsatisfied with the carnage of previous versions.
+    %li Contributors to the W3C, positively miffed that the violence had done so little to simplify web app development, created the WHATWG.
+    %li The WHATWG promptly declared a dictator: Ian Hickson.
+    %li Hickson lead the WHATWG in developing HTML5.
+    %li The W3C continued with XHTML 2.0, until Sir Tim Berners-Lee (praise be to him) sent a letter from on high sharing his thoughts on their inability to get one thing done. The W3C responded by doing two things.
+    %li The W3C&rsquo;s HTML 5 specification went nowhere for a while until someone looked around and realized what the WHATWG had been up to.
+    %li He and others convinced the W3C to give up their forsaken quest and work on something people will use. They began debating whether HTML5 should have a space in it.
+    %li The W3C decided not to have a space, and established peaceful relations with the WHATWG.
+    %li The web moved forward.
+
+%p As you can see, it&rsquo;s a lengthy story, but the thing to take from all it all is this: HTML is a distributed collaboration between a lot of different people with their own goals. It develops slowly but surely, and changes are constantly happening.
+
+%p Sounds fun right? Let&rsquo;s learn how it works.
+
+.exercise
+    %h3 Exercise 3.1
+    %p What is the difference between HTML, XML, and XHTML?
+    .answer
+        %h3 Answer
+        %ul
+            %li HTML is the language websites are built on, and it used specifically for hypertext documents (simply put, documents that have links to other documents and can be navigated by an end-user). It is purposefully lax with its rules, in the interest of properly rendering as many websites as possible.
+            %li XML is a language for structured data, designed specifically to be extended. For example, <code class='language-http'>.docx</code> files (Word documents) are simply a variant of XML made by Microsoft. It is very strict with its rules, in the interest of ensuring all data is properly structured.
+            %li XHTML is a language that began as an effort to fix the issues with HTML, which included making it stricter and making it closer to XML in style.
+            
+        
+
+
+
+
+
+%h2#tags
+    %a(href='#tags' title='Tags') Tags
+        
+%h3 What is a Tag?
+    
+    
+%p All of HTML is built on tags (also called elements). What is a tag? This is a tag:
+
+%pre
+    %code.language-markup
+        :escaped
+            <em>
+            
+%p And this is a closing tag:
+
+%pre
+    %code.language-markup
+        :escaped
+            </em>
+
+%p Tags and closing tags go together, and simultaneously give structure to the page and inform the browser about their contents. In other words:
+
+%pre
+    %code.language-markup
+        :escaped
+            <em>I should be emphasized</em>
+            
+%p In the code above, the words between the <code class='language-markup'>&lt;em&gt;</code> tags should be <em>emphasized</em> (like the word &ldquo;emphasized&rdquo; just was).
+
+.reference-container
+    %aside
+        %p Get a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element' title='List of HTML Elements'>full list of HTML tags</a> from the <abbr title='Mozilla Developer Network'>MDN</abbr>.
+    %p There are many tags in HTML, each with their own semantics (meaning, &ldquo;meaning&rdquo;). You&rsquo;ll learn quite a few of them as we go through this section.
+    
+%h3 Basic Document Tags
+
+%p So you know what tags are, but how are they used? Take a look at this basic HTML page I&rsquo;ve made:
+
+%pre
+    %code.language-markup
+        :escaped
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <title>This Is A Title</title>
+                </head>
+                <body>
+                    <p>This is a paragraph.</p>
+                </body>
+            </html>
+
+.reference-container
+    %aside
+        %p There are some tags that don&rsquo;t need a closing tag. Find out more in this <a href='http://stackoverflow.com/questions/3741896/what-do-you-call-tags-that-need-no-ending-tag' title='What do you call tags that need no ending tag?'>helpful StackOverflow conversation</a>.
+    %p The first thing you may notice is that every tag except the <code class='language-markup'>&lt;!DOCTYPE html&gt;</code> tag has an accompanying closing tag. This is true for almost every tag in the HTML language. When it&rsquo;s not we&rsquo;ll point it out.
+    
+%p The first tag is the <code class='language-markup'>&lt;!DOCTYPE html&gt;</code> tag. This tag indicates to the browser that the document is using the HTML5 specification. There are quite a few different possible doctypes, but modern documents often use the HTML5 one. The <code class='language-markup'>&lt;html&gt;</code> tags enclose all the page contents. <em>All HTML pages must have these tags.</em>
+    
+%p Next there&rsquo;s the <code class='language-markup'>&lt;head&gt;</code> tag. The head of an HTML document contains all the stuff that&rsquo;s not displayed for the user. This includes things like the page title (shown above with the <code class='language-markup'>&lt;title&gt;</code> tags), as well as CSS stylesheets, metadata, and pre-loading Javascript.
+    
+%p Then you have the <code class='language-markup'>&lt;body&gt;</code> tags. The body of an HTML document contains the data that should be displayed for the user. This is where the page&rsquo;s content goes. Inside the body of this document is a little paragraph, indicated by the <code class='language-markup'>&lt;p&gt;</code> tags.
+
+%p As you can see, even a simple page has a number of components. At its core HTML is about giving structure to data. Some of that data is for machines: like where the page&rsquo;s stylesheets are. Other data is for the user, like the name of the site, or the article you&rsquo;re currently trying to read.
+
+%p But how do you make an HTML document? It&rsquo;s easy: just create a file with the <code class='language-markup'>.html</code> extension, and open it in your favorite web browser.
+    
+.exercise
+    %h3 Exercise 3.2
+    %p Create a file called <code class='language-markup'>index.html</code> and open it up in your browser. Copy the code from above into the file and see what happens to the page. What happens if you add another set of <code class='language-markup'>&lt;p&gt;</code> tags below the current ones?
+    .answer
+        %h3 Answer
+        %p You should see another paragraph appear below the current one in the browser when you refresh the page. That&rsquo;s how easy it is to add content to an HTML document!
+        
+%p Before we move on, let&rsquo;s review:
+
+%ol.review
+    %li.review-item
+        All HTML documents need to have a valid doctype. If they don&rsquo;t then browsers have a tendency to freak the geek out.
+    %li.review-item
+        The <code class='language-markup'>&lt;html&gt;</code> tags must contain everything but the doctype in all HTML documents. Seriously, this is easy, just don&rsquo;t forget.
+    %li.review-item
+        The <code class='language-markup'>&lt;head&gt;</code> of an HTML document is the place for stuff that&rsquo;s not displayed for the user.
+    %li.review-item
+        The <code class='language-markup'>&lt;body&gt;</code> of an HTML is the opposite. It&rsquo;s where the displayed content of the page goes.
+            
+%h3 Content Tags
+        
+            
+%p So those are the basic tags needed to create an HTML document. Next let&rsquo;s look at content tags: the tags used to markup your page&rsquo;s content. We already covered the <code class='language-markup'>&lt;p&gt;</code> tag, so let&rsquo;s start with lists. There are two major types of lists in HTML, <em>ordered</em> &mdash; represented by the <code class='language-markup'>&lt;ol&gt;</code>  tag &mdash; and <em>unordered</em> &mdash; represented by the <code class='language-markup'>&lt;ul&gt;</code> tag. Each type of list should contain any number of list item elements, which use the <code class='language-markup'>&lt;li&gt;</code> tag. Here&rsquo;s an example:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <ol>
+                <li>This is the first ordered list item.</li>
+                <li>This is the second.</li>
+                <li>This is the third!</li>
+            </ol>
+            
+            <ul>
+                <li>This is the first unordered list item.</li>
+                <li>This is the second.</li>
+                <li>This is the third!</li>
+            </ul>
+            
+%p Lists are used for exactly what you&rsquo;d expect: listing things! Try making some lists in the HTML document you made in exercise 3.2 and see what happens.
+
+%p Another important set of content tags are the <code class='language-markup'>&lt;blockquote&gt;</code> and <code class='language-markup'>&lt;q&gt;</code> tags. <code class='language-markup'>&lt;blockquote&gt;</code> is for large quotes that should be displayed in their own block of content. <code class='language-markup'>&lt;q&gt;</code> is for quotes that should be displayed inline with other content. Here is an example of each of them:
+    
+.reference-container
+    %aside
+        %p For an explanation of the blockquote code read <a href='http://alistapart.com/blog/post/more-thoughts-about-blockquotes-than-are-strictly-required' title='More Thoughts About Blockquotes than are Stricly Required'>this article</a> from A&nbsp;List&nbsp;Apart.
+    %pre
+        %code.language-markup
+            :escaped
+                <figure class="quote">
+                    <blockquote>A penny saved is a penny earned.</blockquote>
+                    <figcaption>
+                        Ben Franklin, <cite>Poor Richard's Proverbs</cite>
+                    </figcaption>
+                </figure>
+                
+                <p>Ben Franklin liked to say "<q>A penny saved is a penny earned</q>".</p>
+                
+%p The final major content tag to know is the <code class='language-markup'>&lt;img&gt;</code> tag. This tag is used for inserting images into a page. It works like this:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <img src='gecko.jpg' alt="Gecko's rendering flow">
+
+%p Where <code class='language-http'>gecko.jpg</code> is the path to the image, and <code class='language-http'>Gecko&rsquo;s rendering flow</code> is the image&rsquo;s &ldquo;alt text&rdquo;, which is the text that shows when you hover over the image.
+    
+%p There you go, you have now learned three basic but important content tags. Before we move on, let&rsquo;s review:
+
+%ol.review
+    %li.review-item <code class='language-markup'>&lt;ol&gt;</code> and <code class='language-markup'>&lt;ul&gt;</code> are used to make lists. <code class='language-markup'>&lt;li&gt;</code> is used for individual list items, which can contain anything.
+    %li.review-item <code class='language-markup'>&lt;blockquote&gt;</code> and <code class='language-markup'>&lt;q&gt;</code> are used to markup block and inline quotations, respectively. Blockquotes should follow the example above.
+    %li.review-item <code class='language-markup'>&lt;img&gt;</code> is used to markup images. Make sure to provide both a path to the image and some sort of alernative text for accessibility.
+    
+    
+
+
+
+%h2#attributes
+    %a(href='#attributes' title='Attributes') Attributes
+        
+%p You may have noticed that there was more than just the tags in the code examples above. Those other things are called &ldquo;attributes&rdquo;, and they are another important part of HTML. Attributes are modifiers of HTML elements. They can be used for styling an element, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

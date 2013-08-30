@@ -1,0 +1,19 @@
+.button {
+    background: $brand-color;
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 1.5em .75em;
+    border-radius: 4px;
+    text-shadow: rgba(0,0,0,.5) 0 1px 1px;
+    
+    &:hover,
+    &:focus {
+        background: $brand-accent-color;
+        color: #fff;
+    }
+    
+    &.block {
+        display: block;
+        margin: 2em 0;
+    }
+}

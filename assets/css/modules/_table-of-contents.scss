@@ -1,5 +1,5 @@
 .toc-container {
-    background: #eee;
+    background: #fbfbfb;
     color: #999;
     padding: 2em 0;
     font-size: $milli-size;
@@ -33,12 +33,17 @@
     .toc-header {
         @include outer-container;
         
+        padding-top: .5em;
+        
         border-bottom: 4px solid rgba(0,0,0,.1);
         margin-bottom: 2em;
         
         h3 {
             @include span-columns(5);
             font-weight: 500;
+            border: 0;
+            padding-bottom: .75em;
+            margin-bottom: 0;
         }
     }
 

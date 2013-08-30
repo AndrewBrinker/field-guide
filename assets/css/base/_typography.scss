@@ -12,6 +12,35 @@ h6, .zeta    { @include font-size($h6-size);   }
     .mega    { @include font-size($mega-size); }
     .kilo    { @include font-size($kilo-size); }
 
+h1 {
+    position: relative;
+    small {
+        font-family: $brand-secondary-font;
+        color: #999;
+        @include font-size($h2-size);
+        display: block;
+    }
+}
+
+
+h2 {
+    @include font-size($h1-size);
+    margin-top: .25em;
+    
+    & a:after {
+        letter-spacing: 0em;
+    }
+}
+
+h3 {
+    font-family: $brand-secondary-font;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 500;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #dedede;
+}
+
 %amp {
     font-weight: 500;
     font-style: italic;

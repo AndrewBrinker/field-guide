@@ -10,12 +10,16 @@
         h2 {
             font-family: $brand-secondary-font;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(0,0,0,.1);
-            margin: 2em 0 1em;
+            border-top: 2px solid #999;
+            margin: 2em 0 .5em -178px;
+            padding: .25em 0 .25em;
             -webkit-font-smoothing: antialiased;
             
             a {
                 text-decoration: none;
+                color: #556270;
+                font-weight: 500;
+                @include transition(color .1s linear);
                 
                 &::after {
                     content: "right-click for link.";
@@ -23,11 +27,21 @@
                     padding-left: 1em;
                     text-transform: none;
                     font-family: $brand-primary-font;
-                    font-weight: 500;
                     font-style: italic;
                     color: #999;
                     -webkit-font-smoothing: subpixel-antialiased;
                 }
+                
+                &:hover,
+                &:focus {
+                    color: $brand-accent-color;
+                    @include transition(color .1s linear);
+                }
             }
+        }
+        
+        h3 {
+            margin-top: 2em;
+            color: $brand-accent-color; 
         }
     }

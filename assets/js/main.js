@@ -23,3 +23,8 @@ $("abbr").hover(function(event) {
     $this = $(this);
     $this.removeClass("show-tooltip");
 });
+
+// Exercise answers toggle.
+$(".exercise").click(function() {
+    $(this).toggleClass("active");
+});
