@@ -9,7 +9,7 @@
 .reference-container
     %aside
         %p Read more history in &ldquo;<a href='http://alistapart.com/article/a-brief-history-of-markup' title='A Brief History of Markup'>A&nbsp;Brief&nbsp;History&nbsp;of Markup</a>&rdquo;, from the excellent <a href='http://www.abookapart.com/products/html5-for-web-designers' title='HTML5 for Web Designers'>HTML5 for Web Designers</a>.
-    %p HTML is a language with a fraught history. Competing specifications, implementations that compete with, ignore, or add to the spec, fighting within the standards group itself. It is not a simple tale. In the interest of brevity, I will share here only the good portions:
+    %p HTML is a language with a fraught history; competing specifications, implementations that compete with, ignore, or add to the spec, and fighting within the standards group itself. It is not a simple tale. In the interest of brevity, I will share here only the good portions:
 
 %ul
     %li Sir Tim Berners-Lee, inventor of the World Wide Web, created a document called &ldquo;HTML Tags&rdquo; in 1991. This never became a formal specification.
@@ -18,16 +18,11 @@
     %li The W3C, wanting greater consistency between HTML and <abbr title='eXtensible Markup Language'>XML</abbr> (another language they managed), created <abbr title='eXtensible HyperText Markup Language'>XHTML</abbr> 1.0, a stricter variant of HTML 4.0.
     %li The W3C then published XHTML 1.1, and all hell broke loose. Children cried in their beds, the streets ran red with the blood of the innocent, and some backwards compatibility was lost.
     %li The W3C then began work on XHTML 2.0, unsatisfied with the carnage of previous versions.
-    %li Contributors to the W3C, positively miffed that the violence had done so little to simplify web app development, created the WHATWG.
-    %li The WHATWG promptly declared a dictator: Ian Hickson.
-    %li Hickson lead the WHATWG in developing HTML5.
-    %li The W3C continued with XHTML 2.0, until Sir Tim Berners-Lee (praise be to him) sent a letter from on high sharing his thoughts on their inability to get one thing done. The W3C responded by doing two things.
-    %li The W3C&rsquo;s HTML 5 specification went nowhere for a while until someone looked around and realized what the WHATWG had been up to.
-    %li He and others convinced the W3C to give up their forsaken quest and work on something people will use. They began debating whether HTML5 should have a space in it.
-    %li The W3C decided not to have a space, and established peaceful relations with the WHATWG.
-    %li The web moved forward.
+    %li Contributors to the W3C, positively miffed that the violence had done so little to simplify web app development, created the WHATWG and began working on HTML5.
+    %li The W3C continued with XHTML 2.0, for some time, eventually starting their own &lsquo;HTML 5&rsquo; specification.
+    %li The WHATWG and W3C worked on &lsquo;HTML5&rsquo; and &lsquo;HTML 5&rsquo; for some time, eventually agreeing to work together on one HTML5 spec.
 
-%p As you can see, it&rsquo;s a lengthy story, but the thing to take from all it all is this: HTML is a distributed collaboration between a lot of different people with their own goals. It develops slowly but surely, and changes are constantly happening.
+%p As you can see, it&rsquo;s a lengthy story, but the thing to take from it all is this: HTML is a distributed collaboration between a lot of different people with their own goals. It develops slowly but surely, and changes are constantly happening.
 
 %p Sounds fun right? Let&rsquo;s learn how it works.
 
@@ -37,8 +32,8 @@
     .answer
         %h3 Answer
         %ul
-            %li HTML is the language websites are built on, and it used specifically for hypertext documents (simply put, documents that have links to other documents and can be navigated by an end-user). It is purposefully lax with its rules, in the interest of properly rendering as many websites as possible.
-            %li XML is a language for structured data, designed specifically to be extended. For example, <code class='language-http'>.docx</code> files (Word documents) are simply a variant of XML made by Microsoft. It is very strict with its rules, in the interest of ensuring all data is properly structured.
+            %li HTML is the language websites are built on, and is used specifically for hypertext documents (simply put, documents that have links to other documents and can be navigated by an end-user). It is purposefully lax with its rules in the interest of properly rendering as many websites as possible.
+            %li XML is a language for structured data, designed specifically to be extended. For example, <code class='language-http'>.docx</code> files (Word documents) are simply a variant of XML made by Microsoft. It is very strict with its rules in the interest of ensuring all data is properly structured.
             %li XHTML is a language that began as an effort to fix the issues with HTML, which included making it stricter and making it closer to XML in style.
             
         
@@ -53,21 +48,16 @@
 %h3 What is a Tag?
     
     
-%p All of HTML is built on tags (also called elements). What is a tag? This is a tag:
+%p HTML is a language for structuring content on the web. As such, its main design concern is how to properly indicate structure in a clear and consistent manner. It accomplishes this with tags (also called elements). Here are some example tags:
 
 %pre
     %code.language-markup
         :escaped
-            <em>
+            <em></em>
             
-%p And this is a closing tag:
+%p Most HTML tags come in pairs, an opening tag and a closing tag. Everything between those two tags is said to be &lsquo;contained&rsquo; by those tags. To understand this, imagine that each pair of tags is a box. Anything between the tags is within the box. In the end, your HTML document should be a collection of boxes within boxes, each box labelled properly to indicate what is inside of it. In other words, every HTML element should provide both structure and meaning to the document it&rsquo;s in.
 
-%pre
-    %code.language-markup
-        :escaped
-            </em>
-
-%p Tags and closing tags go together, and simultaneously give structure to the page and inform the browser about their contents. In other words:
+%p For example, the <code class='language-markup'>&lt;em&gt;</code> tag indicates emphasized text, like so:
 
 %pre
     %code.language-markup
@@ -76,10 +66,14 @@
             
 %p In the code above, the words between the <code class='language-markup'>&lt;em&gt;</code> tags should be <em>emphasized</em> (like the word &ldquo;emphasized&rdquo; just was).
 
+%p There are some HTML tags that do not have a closing tag. These tags, called &ldquo;void elements&rdquo;, can&rsquo;t contain other tags. Think of them as empty boxes.
+
+%p There are also some tags that exist only to provide structure without meaning, or meaning without structure. For example the <code class='language-markup'>&lt;div&gt;</code> tag indicates a division in the page, but without an ID or class name (which we&rsquo;ll get to later), it indicates nothing about the things it contains. Similarly, the <code class='language-markup'>&lt;link&gt;</code> tag has semantic importance (it indicates that a stylesheet is being imported), but it doesn&rsquo;t directly affect the structure of the page.
+
 .reference-container
     %aside
         %p Get a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element' title='List of HTML Elements'>full list of HTML tags</a> from the <abbr title='Mozilla Developer Network'>MDN</abbr>.
-    %p There are many tags in HTML, each with their own semantics (meaning, &ldquo;meaning&rdquo;). You&rsquo;ll learn quite a few of them as we go through this section.
+    %p There are many tags in HTML, each with their own specific use-case, but a basic website can be built with only a small subset of them. In this chapter we will cover those basic tags, and leave the discovery and use of more specialized tags up to you.
     
 %h3 Basic Document Tags
 
@@ -91,6 +85,7 @@
             <!DOCTYPE html>
             <html>
                 <head>
+                    <meta charset="utf-8">
                     <title>This Is A Title</title>
                 </head>
                 <body>
@@ -105,7 +100,10 @@
     
 %p The first tag is the <code class='language-markup'>&lt;!DOCTYPE html&gt;</code> tag. This tag indicates to the browser that the document is using the HTML5 specification. There are quite a few different possible doctypes, but modern documents often use the HTML5 one. The <code class='language-markup'>&lt;html&gt;</code> tags enclose all the page contents. <em>All HTML pages must have these tags.</em>
     
-%p Next there&rsquo;s the <code class='language-markup'>&lt;head&gt;</code> tag. The head of an HTML document contains all the stuff that&rsquo;s not displayed for the user. This includes things like the page title (shown above with the <code class='language-markup'>&lt;title&gt;</code> tags), as well as CSS stylesheets, metadata, and pre-loading Javascript.
+.reference-container
+    %aside
+        %p Read more about HTML character encodings on the <a href='http://www.w3.org/International/questions/qa-html-encoding-declarations' title='HTML Encoding Declarations' target='_blank'>W3C page about it</a>.
+    %p Next there&rsquo;s the <code class='language-markup'>&lt;head&gt;</code> tag. The head of an HTML document contains all the stuff that&rsquo;s not displayed for the user. This includes things like the character encoding (which tells the browser how the document is encoded, and is indicated using <code class='language-markup'>&lt;meta charset="utf-8"&gt;</code> for UTF-8 encoding) and the page title (shown above with the <code class='language-markup'>&lt;title&gt;</code> tags), as well as CSS stylesheets, metadata, and pre-loading Javascript.
     
 %p Then you have the <code class='language-markup'>&lt;body&gt;</code> tags. The body of an HTML document contains the data that should be displayed for the user. This is where the page&rsquo;s content goes. Inside the body of this document is a little paragraph, indicated by the <code class='language-markup'>&lt;p&gt;</code> tags.
 
@@ -186,6 +184,18 @@
     %li.review-item <code class='language-markup'>&lt;ol&gt;</code> and <code class='language-markup'>&lt;ul&gt;</code> are used to make lists. <code class='language-markup'>&lt;li&gt;</code> is used for individual list items, which can contain anything.
     %li.review-item <code class='language-markup'>&lt;blockquote&gt;</code> and <code class='language-markup'>&lt;q&gt;</code> are used to markup block and inline quotations, respectively. Blockquotes should follow the example above.
     %li.review-item <code class='language-markup'>&lt;img&gt;</code> is used to markup images. Make sure to provide both a path to the image and some sort of alernative text for accessibility.
+        
+.exercise
+    %h3 Exercise 3.3
+    %p Try adding an ordered list, an unordered list, a blockquote, an inline quote, and an image to the document you&rsquo;ve been working on. What happens when you view the document in your browser?
+    .answer
+        %h3 Answer
+        %p You should see a numbered list, a dotted list, a nice big quote, a smaller quote, and whatever image you decided to use.
+        
+%h3 Form Tags
+
+%p Another important building block of the web is the form. Forms are used day in and day out to collect information through a webpage that can then be processed, whether it&rsquo;s for signing up for Facebook, posting to Twitter, or sharing on Pinterest.
+    
     
     
 
@@ -194,8 +204,522 @@
 %h2#attributes
     %a(href='#attributes' title='Attributes') Attributes
         
-%p You may have noticed that there was more than just the tags in the code examples above. Those other things are called &ldquo;attributes&rdquo;, and they are another important part of HTML. Attributes are modifiers of HTML elements. They can be used for styling an element, 
+%p You may have noticed that there was more than just the tags in the code examples above. Those other things are called &ldquo;attributes&rdquo;, and they are another important part of HTML. Attributes are modifiers of HTML elements. They can be used for styling an element, adding semantics to the element, improving the element's accessibility for people with disabilities, and lots of other things.
 
+%p In the <code class='language-markup'>&lt;img&gt;</code> tag example above, the tag has two attributes: <code class='language-markup'>src</code> and <code class='language-markup'>alt</code>. The first attribute tells the browser where the image is stored so that the browser can properly display it. The second attribute provides alternate text for the browser to display if it is unable to load the image.
+
+%p The most important attributes to understand are the <code class='language-markup'>id</code> and <code class='language-markup'>class</code> attributes. Here&rsquo;s how they work:
+    
+%h3 The &ldquo;ID&rdquo; Attribute
+
+%p The <code class='language-markup'>id</code> attribute is used to uniquely identify a single element in an HTML document. It can be used by both Javascript and CSS to access a specific element, and can also be appended to the end of a URL (preceded by an octothorpe) to directly access the element in your browser. It is incredibly useful. However, an ID can&rsquo;t be reused. If something on a page has an ID of &ldquo;header&rdquo;, nothing else on the page can.
+    
+%p This is how an ID is set:
+
+%pre
+    %code.language-markup
+        :escaped
+            <div id='monkey'>
+                <p>I like monkeys.</p>
+            </div>
+            
+%h3 The &ldquo;Class&rdquo; Attribute
+
+%p The <code class='language-markup'>class</code> attribute is used to identify a number of elements in an HTML document. Unlike IDs, Classes can be repeated as many times as desired per document, and exist largely as style hooks so that CSS can properly style elements on the page. Javascript can also attach events to Classes, but unlike with IDs, those events affect multiple elements on the page, instead of a single one.
+    
+%p This is how a class is set:
+
+%pre
+    %code.language-markup
+        :escaped
+            <div class='monkey'>
+                <p>I still like monkeys.</p>
+            </div>
+            
+%h3 Notes on IDs and Classes
+
+%p IDs and Classes may seem similar, but they are very different, and understanding how to use them properly is often the difference between a bad and good front end web developer. To make sure you do it right, follow the following rules of thumb:
+
+%ol
+    %li If you need a styling hook, use a class.
+    %li If you need to access many elements in Javascript, use a class.
+    %li If you need to access a single element in Javascript, use an ID.
+    %li If you want an element to be accessible via a URL fragment identifier, use an ID.
+    
+%p Follow those rules and you should be good.
+
+%h3 The &ldquo;Alt&rdquo; and &ldquo;Title&rdquo; Attributes
+
+%p There are two other common and important attributes to understand: the <code class='language-markup'>alt</code> and <code class='language-markup'>title</code> attributes. Each of them is important for a page&rsquo;s accessibility, and while they are very similar it is important to understand the differences in how they work.
+    
+
+
+
+            
+
+
+
+
+
+
+
+%h2#accessibility
+    %a(href='#accessibility' title='Accessibility') Accessibility
+        
+%p One thing that many new HTML developers fail to consider is how accessible their site is. The web is used day in and day out by people with disabilities, and yet developers without impairments may often not consider whether their sites are usable for the blind, the deaf, the colorblind, or the disabled (to name a few).
+
+.reference-container
+    %aside
+        %p To find out more about web accessibility, including how to implement it on your sites, go to the W3C&rsquo;s <a href='http://www.w3.org/WAI/intro/accessibility.php' title='Web Accessibility Initiative' target='_blank'>Web Accessibility Initiative</a> website.
+    %p The W3C has four main requirements for sites to be considered accessible. They are:
+    
+%ol
+    %li Perceivable information and user interface
+    %li Operable user interface and navigation
+    %li Understandable information and user interface
+    %li Robust content and reliable interpretation
+    
+%p Each of these has multiple sub-points, which we will address one at a time.
+        
+%h3 Perceivable Information and User Interface
+
+%p The first requirement of an accessible site is that all content be perceivable to the user. For example, a blind user can&rsquo;t view images, and so relies on a text description that their assistive software may read. This text description must adequately report the information given by the picture, so that the blind user is not receiving a limited or subpar experience because of their disability.
+
+%p Whenever you are working on the web, particularly with non-text media, make sure to provide supplementary text information so that a person who is unable to view the picture/hear the audio/watch the video can still get the full amount of information those media provide.
+    
+%h3 Operable User Interface and Navigation
+
+%p The next requirement of an accessible site is that a person be able to properly navigate the site using any software they may want to use. There are some users whose disabilities render them unable to use a mouse to navigate sites. These users rely on keyboard navigation to surf the web. When you are developing a site, if not enough care is given to making sure the site is keyboard-navigable, you may leave these users unable to use your site at all.
+    
+%p Beyond just making it possible to navigate your site using a keyboard, you want to give a lot of thought to the organization and design of that navigation. When developing sites for the average user you will often consider how usable something is, and those considerations will affect the placement of elements across your site. Give that same level of consideration to keyboard users, to make sure that they are able to easily and comfortably navigate your site as well.
+
+%h3 Understandable Information and User Interface
+
+%p The third requirement of an accessible site is that the information presented be understandable and easy to work with. This means that copy should be written in a way that minimizes confusion, has a logical flow to it, and provides definitions and other supporting information for jargon and other unclear language. It also means that document organization across pages should be consistent, predictable, and logical, and that ample opportunity be given for users submitting information to the site to review and correct their submissions.
+
+%p One particular sticking point with web accessibility is the accessibility of forms. Forms are an important part of most people&rsquo;s day-to-day use of the web, but if they are improperly labelled, keyboard tested, and reactive to user input they can be a nightmare for users utilizing assistive technology. For example, it has become increasingly common for web developers to place placeholder text inside a form field to indicate what information the field is looking for. This is all well and good for the average user, but placeholder text is not accessible for most assistive technology, and so a user using that technology may be left in the dark about what the field is even asking for. To combat this, make sure that all forms are properly labelled, and are organized in a clear and logical manner.
+
+%h3 Robust Content and Reliable Interpretation
+
+%p The fourth and final requirement of an accessible site is that content be comptable with current and future tools. This means that all documents created for the web should be consistent with current standards, and should utilize stable and well-defined specifications to make sure that support continues for the document&rsquo;s features. When developing a site, always be wary of using features that are still in beta, and about following incomplete or changing specifications. Stability is important for a good website and for accessibility, and so always make sure to use the best, most stable technology available.
+
+
+
+
+
+    
+    
+
+
+
+
+%h2#microformats
+    %a(href='#microformats' title='Microformats') Microformats
+        
+%p You now know that HTML is used to define the structure and content of a website. You&rsquo;ve learned how HTML elements define the semantics of their contents, and you&rsquo;ve learned how attributes can be used to enhance the usability of a site. However, websites are not only used by humans. Every day thousands of computers crawl the internet for sites like Google or Yandex, collecting information about the pages they crawl. This ability of computers to properly understand the contents of the webpage is of major importance to the web, and so when you creating a website you should not only be concerned with the usability of your site for humans, but for computers as well.
+
+%p One issue computers encounter when parsing the contents of an HTML document is a lack of context or meaning attached to certain text. For example, if a Google bot is crawling a website to index it for search results, that bot may be interested in there is a phone number or street address on the website. If it can identify that content, it can be given special treatment in search results. However, that content may not always be obvious to the computer, and so without some help from the HTML document itself, it may be unable to properly identify that useful content.
+
+.reference-container
+    %aside
+        %p Read more about Microformats on the <a href='http://microformats.org/' title='Microformats.org' target='_blank'>Microformats website</a>.
+    %p Enter Microformats. Microformats are part of an effort to create what is called the &ldquo;Semantic Web&rdquo;. The idea behind the Semantic Web is to take all of the largely unstructured webpages in existence today and convert into a web of machine-readable data. Microformats assist in this by providing small specifications that exist alongside HTML and are used to provide a greater level of semantic detail in describing content. There are a number of current Microformat specifications. Let&rsquo;s take a look at one of the oldest ones: the hCard specification.
+        
+%p hCard exists to allow for the semantic markup of information pertaining to people and organizations. For example, many personal websites have an &ldquo;About&rdquo; page that contains contact information for the site owner. Without hCard, it may look something like this:
+
+%pre
+    %code.language-markup
+        :escaped
+            <p>My name is Dr. Gary Wiles and my phone number is (800) 123-4567</p>
+
+%p This markup is reasonable from the perspective of the user. It provides the information it should provide and allows the user to contact the site owner. However, it lacks proper semantics for the computer. With hCard, the above code could be replaced with something like this:
+
+%pre
+    %code.language-markup
+        :escaped
+            <p class='vcard'>
+                My name is 
+                <span class='fn'>
+                    <span class='honorific-prefix'>Dr.</span> 
+                    <span class='given-name'>Gary</span> 
+                    <span class='family-name'>Wiles</span>
+                </span> 
+                and my phone number is <span class='tel'>(800) 123-4567</span>
+            </p>
+
+%p Now, if a computer begins crawling the website it would have access to help semantic information for both the man&rsquo;s name and his telephone number, allowing it to be properly processed.
+
+.reference-container
+    %aside
+        %p Version 2.0 is the latest stable Microformats specification. Read it on the <a href='http://microformats.org/wiki/microformats2' title='Microformats2' target='_blank'>Microformats wiki</a>.
+    %p Microformats are still a developing concept, and many new microformats are still in early stages. But the idea that computers should be given semantic information about content is an important one, and marking up your content to be properly accessible is always a smart move.
+
+%p However, you may not always want content to be accessible. In fact sometimes, you may not want computers to understand it at all. In which case Microformats are definitely not the answer for you.
+
+
+
+
+
+%h2#scalable-html
+    %a(href='#scalable-html' title='Scalable HTML') Scalable HTML
+        
+%p It can be easy to only look at the here and now when developing a website. You may be up against a deadline, whether it&rsquo;s self-imposed, imposed by your boss, or a byproduct of the market you&rsquo;re working in. During these times it can be easy to make quick decisions to finish a feature, decisions that are poorly considered and lead to problems down the road. While it may be tempting to ignore web standards and ignore good practices during these times, it is important to always consider the possibility for potential growth in a website.
+    
+%p These considerations manifest themselves in two key ways:
+
+%ol
+    %li Avoid overly generic ID attributes
+    %li Don&rsquo;t mix concerns
+    
+%p Let&rsquo;s address these one by one.
+
+%h3 Avoid Overly Generic ID Attribures
+
+%p Let&rsquo;s say you start a website and you are the only person working on it. You know that there are only a few key sections that you want to give IDs to. So you give them generic IDs like <code class='language-markup'>header</code> and <code class='language-markup'>footer</code>. As time goes on your site grows and you hire a couple of developers to help you run it. They begin to add features to the site, and they need some IDs for some Javascript code to hook into. They decide to use <code class='language-markup'>header</code> as one of the IDs. They assume it&rsquo;s not used elsewhere in the document, so they attach a Javascript even to it. Suddenly, people clicking things on the site are getting weird unexpected behavior. Your developers don&rsquo;t know why and now have to spend time figuring out the bug, all because you both used a really generic ID.
+    
+%p When you are using IDs for Javascript hooks, try to make sure they aren&rsquo;t overly generic. For example, if you have a button that opens and closes a modal window, don&rsquo;t use the ID <code class='language-markup'>open</code> or <code class='language-markup'>close</code> or <code class='language-markup'>toggle</code> for it. Use something clearer like <code class='language-markup'>modal-toggle</code>. It&rsquo;t longer, but it&rsquo;s also clearer and less likely to conflict with future changes to the site.
+    
+%h3 Don&rsquo;t Mix Concerns
+
+%p Back in the old days of web development, it was incredibly common to see inline styles attached to HTML elements using the <code class='language-markup'>style</code> attribute. It was fast, it was easy, and for many people it was the preferred way of styling a website.
+
+%p This approach can be fine for one developer working on a small site, but it&rsquo;s a nightmare to maintain, and leads to an incredibly tight coupling of structure and style. Whenever you want to make a change to the content of your site, you&rsquo;ve also got to manually change a number of inline styles. Styles that aren&rsquo;t commented, aren&rsquo;t well organized, and aren&rsquo;t always easy to find.
+
+%p Modern web developers take care to separate their concerns. To make sure that the HTML documents they write are only for content, the CSS is only for style, and the Javascript is only for dynamic changes to the site. This makes things easier to find, easier to maintain, and easier to change when you decide to redesign.
+
+
+
+
+
+%h2#validation
+    %a(href='#validation' title='Validation') Validation
+        
+%p Validation is the process of feeding your HTML code into some software that tells you whether your code conforms to current specifications or not. It is a useful tool in the arsenal of any web developer, but know that validation is not the most important part of your development process. Validation is best used as a tool to evaluate whether you are writing things in a clear and consistent manner. However, browser often implements features that are not yet part of a specification, and therefore do not evaluate as valid code when passed through a validator. This leaves you with a problem: do you remove the features the validator doesn&rsquo;t like, or do you leave them in? The answer is to remember that while the specification exists to guide you and the browser makers, it&rsquo;s browser themselves that define what you can or can&rsquo;t use. If it works in the browsers you intend to support, and you believe your site is improved by it, then it is often a good decision to ignore the recommendations of the validator and keep the feature in.
+
+
+
+
+
+%h2#html5
+    %a(href='#html5' title='HTML5') HTML5
+        
+%p You&rsquo;ve now learned the basic language skills and concepts needed to be a modern web developer. You learned the history of HTML, you learned what elements are and how to use them, you learned about attributes and how they provide additional information for both computers and humans, you learned about accessibility and microformats, scalability and code validation. Now it&rsquo;s time to learn about some of the new features being developed in the world of HTML.
+
+%p As you found out in the <a href='#history' title='History of HTML'>History of HTML</a> section of this chapter, the current version of the HTML specification is known as HTML5, and is being worked on in a collaboration between the WHATWG and the W3C.
+    
+%p There are currently a number of separate and interesting technologies being developed at part of the HTML5 specification. Here we will focus on single key development that affects the way you write markup day-to-day. It&rsquo;s HTML5&rsquo;s semantically richer tags.
+
+%p In the <a href='#tags' title='Tags'>Tags</a> section of this chapter you learned about the basic HTML tags (their meaning and usage). These tags cover a wide array of different and important semantic scenarios, and have allowed developers to build semantically rich sites for over a decade. However, they do not cover all the cases, and for a long time even some common cases had to be covered using semantic-less <code class='language-markup'>&lt;div&gt;</code>s and associated classes to provide meaning (a construct sometimes jokingly called &ldquo;divitis&rdquo;). One of the goals of HTML5 was to expand the number of tags provided by the language to make it easier to make semantically rich sites while avoiding unecessary classes.
+    
+%p The most eminently useful of the new elements are <code class='language-markup'>&lt;section&gt;</code>, <code class='language-markup'>&lt;article&gt;</code>, <code class='language-markup'>&lt;header&gt;</code>, <code class='language-markup'>&lt;footer&gt;</code>, <code class='language-markup'>&lt;aside&gt;</code>, and <code class='language-markup'>&lt;nav&gt;</code>.
+    
+%h3 The &ldquo;section&rdquo; Element
+    
+%p The <code class='language-markup'>&lt;section&gt;</code> element indicates a logically connected group of content. This may sound pretty generic, but imagine the following code:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <div id='who-we-are' class='section'>
+                <h2>
+                    <a href='#who-we-are' title='Who We Are'>
+                        Who We Are
+                    </a>
+                </h2>
+                <p>We are a team of rugby-ers who specialize in the knitting of doilies.</p>
+            </div>
+            
+%p In the above example, <code class='language-markup'>&lt;div&gt;</code> is clearly part of a larger context (perhaps the About page for this rugby team&rsquo;s website). The <code class='language-markup'>&lt;div&gt;</code> is used both as a linking hook, and to indicate that the content it contains is all about a single topic: who they are as a group. Here&rsquo;s the same idea, accomplished with the <code class='language-markup'>&lt;section&gt;</code> element:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <section id='who-we-are'>
+                <h2>
+                    <a href='#who-we-are' title='Who We Are'>
+                        Who We Are
+                    </a>
+                </h2>
+                <p>We are a team of rugby-ers who specialize in the knitting of doilies.</p>
+            </section>
+            
+%p In this case, the fact that the contained code is all logically grouped is indicates on the element, not the attribute, level of the code. This is easier to grok, clearer for machines, and cleaner. That&rsquo;s what the <code class='language-markup'>&lt;section&gt;</code> tag is for.
+    
+%h3 The &ldquo;article&rdquo; Element
+
+%p The <code class='language-markup'>&lt;article&gt;</code> element indicates a collection of self-contained content that is suitable for syndication (via an RSS or ATOM feed). This is great for news sites, blogs, and anything else that publishes content. Pre-HTML5, you would often see something like the following for a blog post:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <div class='post'>
+                <h2>
+                    <a href='/posts/cheese' title='Certain Cheese Considered Delicious'>
+                        Certain Cheese Considered Delicious
+                    </a>
+                </h2>
+                <p>Seriously, cheese is awesome.</p>
+                <div class='meta'>
+                    <p>This was posted on Aug 4th, 2013 by Don Wilberforce.</p>
+                </div>
+            </div>
+            
+%p That can now be modified to this:
+
+%pre
+    %code.language-markup
+        :escaped
+            <article class='post'>
+                <h2>
+                    <a href='/posts/cheese' title='Certain Cheese Considered Delicious'>
+                        Certain Cheese Considered Delicious
+                    </a>
+                </h2>
+                <p>Seriously, cheese is awesome.</p>
+                <div class='footer meta'>
+                    <p>This was posted on Aug 4th, 2013 by Don Wilberforce.</p>
+                </div>
+            </article>
+            
+%p I know what you&rsquo;re thinking: that&rsquo;s longer than the original! Yes, it is. However, it is also more semantically rich. Instead of relying on a fragile class to indicate that we&rsquo;re looking at a blog post, we can look right at the tag. Furthermore, HTML parsers have no understanding of what <code class='language-markup'>class='post'</code> means, to them it&rsquo;s just a keyword to be matched to CSS styles. Now parsers and page scrapers (like those used by <a href='http://www.instapaper.com/' title='Instapaper' target='_blank'>Instapaper</a>, <a href='http://getpocket.com' title='Pocket' target='_blank'>Pocket</a>, <a href='http://readability' title='Readability' target='_blank'>Readability</a>, and other read-it-later apps) can much more easily figure out where the post content is.
+    
+%h3 The &ldquo;header&rdquo; Element
+
+%p The <code class='language-markup'>&lt;header&gt;</code> element indicates a collection of introductory or navigational information. The most obvious use is the header of a webpage, which often has the name of the site, and some navigation items, maybe a search bar. Let&rsquo;s see how that would look in pre-HTML4 markup:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <div class='header'>
+                <h1 class='header-logo'>
+                    <a href='/' title='Wumbus: Social Effluvia'>
+                        Wumbus
+                    </a>
+                </h1>
+                <ul class='header-nav'>
+                    <li class='header-nav-item'>
+                        <a href='/about' title='About Us'>
+                            About
+                        </a>
+                    </li>
+                    <li class='header-nav-item'>
+                        <a href='/blog' title='Our Blog'>
+                            Blog
+                        </a>
+                    </li>
+                    <li class='header-nav-item'>
+                        <a href='/login' title='Login'>
+                            Login
+                        </a>
+                    </li>
+                    <li class='header-nav-item'>
+                        <a href='/join' title='Join'>
+                            Join
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+%p Here is with the <code class='language-markup'>&lt;header&gt;</code> tag:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <header class='page-header'>
+                <h1 class='page-header-logo'>
+                    <a href='/' title='Wumbus: Social Effluvia'>
+                        Wumbus
+                    </a>
+                </h1>
+                <ul class='page-header-nav'>
+                    <li class='page-header-nav-item'>
+                        <a href='/about' title='About Us'>
+                            About
+                        </a>
+                    </li>
+                    <li class='page-header-nav-item'>
+                        <a href='/blog' title='Our Blog'>
+                            Blog
+                        </a>
+                    </li>
+                    <li class='page-header-nav-item'>
+                        <a href='/login' title='Login'>
+                            Login
+                        </a>
+                    </li>
+                    <li class='page-header-nav-item'>
+                        <a href='/join' title='Join'>
+                            Join
+                        </a>
+                    </li>
+                </ul>
+            </header>
+            
+%p &ldquo;What the hell? It got bigger! Isn&rsquo;t this worse than the code from before?&rdquo; you may say. Well, let&rsquo;s look at another example:
+
+%pre
+    %code.language-markup
+        :escaped
+            <article class='post'>
+                <header class='post-header'>
+                    <h2>
+                        <a href='/posts/faust' title="Faust the Mouse's Daring Break!">
+                            Faust the Mouse's Daring Break!
+                        </a>
+                    </h2>
+                </header>
+                <p>It was unsuccessful.</p>
+                <div class='footer meta'>
+                    <p>This was posted on May 15th, 2013 by Marsha Hyde.</p>
+                </div>
+            </article>
+            
+%p That&rsquo;s a blog post, and it&rsquo;s got a header! You see, the <code class='language-markup'>&lt;header&gt;</code> tag can be used over and over each document, and can be used in things like articles, sections, or whatever you feel needs a header. All the while it retains its semantic meaning, while still providing you will a tag you can hook into with your styles (and modify via classes, as always). That&rsquo;s what&rsquo;s so great about <code class='language-markup'>&lt;header&gt;</code>.
+    
+%h3 The &ldquo;Footer&rdquo; Element
+
+%p The <code class='language-markup'>&lt;footer&gt;</code> element is much the same as the <code class='language-markup'>&lt;header&gt;</code> element. It can be used in any context, whether at the page level, or within a <code class='language-markup'>&lt;section&gt;</code> or <code class='language-markup'>&lt;article&gt;</code>. There&rsquo;s not much to say beyond that, so let&rsquo;s just look at this example:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <article class='post'>
+                <header class='post-header'>
+                    <h2>
+                        <a href='/posts/faust' title="Faust the Mouse's Daring Break!">
+                            Faust the Mouse's Daring Break!
+                        </a>
+                    </h2>
+                </header>
+                
+                <p>It was unsuccessful.</p>
+                
+                <footer class='meta'>
+                    <p>This was posted on May 15th, 2013 by Marsha Hyde.</p>
+                </footer>
+            </article>
+
+%p As you can see, this is the same code as the last example, but with the footer replaced the same way the header was. That&rsquo;s all there is, really.
+
+%h3 The &ldquo;Aside&rdquo; Element
+
+%p The <code class='language-markup'>&lt;aside&gt;</code> element is where things get weird. It has two different meanings, depending on where in a document it is used. When inside of an <code class='language-markup'>&lt;article&gt;</code> element, it is used to indicate content tangentially related to the main content. Outside of an <code class='language-markup'>&lt;article&gt;</code> element, it indicates secondary content, like a sidebar. Here is an example that illustrates both uses:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <div class='container'>
+            
+                <header class='container-header'>
+                    <h1 class='header-logo'><a href='/' title='My Blog'>
+                            My Blog
+                    </a></h1>
+                    <nav class='header-nav'>
+                        <a href='nav-link' href='/about' title='About'>
+                            About
+                        </a>
+                        <a href='nav-link' href='/portfolio' title='Portfolio'>
+                            Portfolio
+                        </a>
+                    </nav>
+                </header>
+                
+                <section class='posts'>
+                    <article class='post'>
+                        <header class='post-header'>
+                            <h2><a href='/hello-world' title='Hello World!'>
+                                    Hello World!
+                            </a></h2>
+                        </header>
+                        <aside>
+                            <p>"Hello World!" is a common phrase.</p>
+                        </aside>
+                        <p>This is an example post.</p>
+                        <footer class='post-footer'>
+                            <p>Posted on May 14th, 2013.</p>
+                        </footer>
+                    </article>
+                </section>
+                
+                <aside class='sidebar'>
+                    <p>This blog is actually pretty terrible.</p>
+                </aside>
+                
+                <footer class='page-footer'>
+                    <p>Copyright Martin Shoredale 2013.</p>
+                </footer>
+            </div>
+            
+%h3 The &ldquo;Nav&rdquo; Element
+
+%p You&rsquo;ve already seen it a couple of times. The <code class='language-markup'>&lt;nav&gt;</code> element indicates navigation, and should contain a collection of links. This can be done with a list (ordered or unordered) or without one. There are arguments for and against the listed approach. Read <a href='http://css-tricks.com/wrapup-of-navigation-in-lists/' title='Wrapup of Navigation in Lists' target='_blank'>Chris Coyier&rsquo;s post on the matter</a> to learn more. Here&rsquo;s an example of each approach:
+    
+%pre
+    %code.language-markup
+        :escaped
+            <nav>
+                <a href='/about' title='About'>
+                    About
+                </a>
+                <a href='/portfolio' title='Portfolio'>
+                    Portfolio
+                </a>
+            </nav>
+            
+            <nav>
+                <ol>
+                    <li>
+                        <a href='/about' title='About'>
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href='/portfolio' title='Portfolio'>
+                            Portfolio
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+
+%h3 One More Thing
+
+%p While newer browsers support these semantically richer tags just fine, some older browsers (particularly IE8 and earlier), do not. There are ways to make these new tags work in older browsers, and it&rsquo;s up to you to decide whether to use them. Just consider what browsers you want to support, and if those browsers include older models, you may want to consider sticking with the old markup for a while.
+
+%h2#conclusion
+    %a(href='#conclusion' title='Conclusion') Conclusion
+
+%p So that is HTML. It is a relatively simple language, but is both flexible and powerful enough to be the backbone of the modern web. Before we move on to the rest of the body, let&rsquo;s review:
+
+                
+                
+%a.button.block(href='/css' title='CSS') Next Chapter: CSS &rarr;
+
+            
+
+            
+
+
+            
+            
+            
+
+
+            
+
+            
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
 
 
 

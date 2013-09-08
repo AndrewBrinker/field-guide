@@ -41,6 +41,15 @@ h3 {
     border-bottom: 1px solid #dedede;
 }
 
+h4 {
+    font-weight: 700;
+    font-family: $brand-secondary-font;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    
+    margin-top: 2.5em;
+}
+
 %amp {
     font-weight: 500;
     font-style: italic;

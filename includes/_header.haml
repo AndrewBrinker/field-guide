@@ -11,7 +11,7 @@
         %link(href = "<!-- @path favicon.ico -->" rel = "shortcut icon")
         %link(href = "<!-- @path apple-touch-icon-precomposed.png -->" rel = "apple-touch-icon-precomposed")
         
-        %script(src = "assets/js/vendor/modernizr-2.6.2.min.js")
+        %script(src = "<!-- @path modernizr-2.6.2 -->")
         %script(src = "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js")
         
         -# Typekit Stuff
@@ -21,7 +21,13 @@
 
         -# Loading the stylesheets
         <!-- @stylesheet main -->
+        
     %body(class = "<!-- $bodyClass | page -->")
+        
+        .no-js-warning
+            %p This site requires <strong>Javascript</strong> to function.<br>Please turn on <strong>Javascript</strong> if you want to continue.<br>Sorry for the inconvenience.
+            %small &mdash; Andrew Brinker
+    
     
         %section#toc.toc-container.is-hidden
             %header.toc-header

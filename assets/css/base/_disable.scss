@@ -1,3 +1,9 @@
+/**
+ * disable class
+ *
+ * Turn off pointer events. This can be used directly as a class, or used with
+ *   @extend for anything you don't want people clicking
+ */
 .disable {
     pointer-events: none;
 }

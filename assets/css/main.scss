@@ -67,7 +67,7 @@ $micro-size:        px(.667)!default;
 
 $brand-primary-font:   "chaparral-pro", Georgia, "Times New Roman", Times, serif;
 $brand-secondary-font: "proxima-nova-extra-condensed", Impact, Helvetica, Arial, sans-serif;
-$brand-mono-font:      "menlo", "courier new", courier, monospace, mono;
+$brand-mono-font:      Consolas, Monaco, 'Andale Mono', monospace;
 
 
 
@@ -127,7 +127,6 @@ $gutter: em(40px);
 @import 'base/clearfix';
 @import 'base/disable';
 @import 'base/images';
-@import 'base/definition-list';
 @import 'base/button';
 
 
@@ -160,6 +159,7 @@ $gutter: em(40px);
 @import 'state/tooltip';
 @import 'state/show-toc';
 @import 'state/respond';
+@import 'state/no-js';
 
 
 

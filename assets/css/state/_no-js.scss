@@ -1,0 +1,16 @@
+.no-js-warning,
+.no-js .toc-container,
+.no-js .header,
+.no-js .content-wrap,
+.no-js .footer-container {
+    display: none;
+}
+
+.no-js .no-js-warning {
+    @include font-size($h2-size);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin: 4em auto;
+}

@@ -1,0 +1,57 @@
+%p.lede A running river, a riveting resplendence.
+
+%h2#what-styles-are
+    %a(href='#what-styles-are' title='What Styles Are') What Styles Are
+
+%p <abbr title='Cascading StyleSheets'>CSS</abbr>, as the name suggests, is a language for <em>styling</em> the content of a website. While HTML is about structure, CSS is about style, and the first step to understand CSS is understanding how its styles are applied to an HTML document.
+
+%p You may remember our discussion of how webpages are constructed from way back in Chapter 2 (if you don&rsquo;t, <a href='/browsers#rendering-engines' title='A Review of Rendering Engines'>feel free to review</a>). The browser takes the HTML code and constructs a DOM tree, which is the browser&rsquo;s internal representation of a page&rsquo;s structure. It then applies styles from any stylsheets the page is using to that DOM tree, followed by flowing and painting the page.
+
+%p Before we discuss how styles are matched to elements, let&rsquo;s look at a simple set of example CSS code that might be used for styling a post on a blog, along with the accompanying HTML:
+
+%figure.combined-code-block
+    %pre
+        %code.language-markup
+            :escaped
+                <article class='post'>
+                    <header class='post-header'>
+                        <h2 class='post-title'>Are Radishes Giving You Cancer?</h2>
+                    </header>
+                    
+                    <p>We currently have no evidence for that, so it's a solid maybe.</p>
+                    
+                    <footer class='post-footer'>
+                        <span class='post-meta'>Posted on May 13th, 2011</span>
+                    </footer>
+                </article>
+    %pre
+        %code.language-css
+            :escaped
+                .post {
+                    background: #fff;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    padding: 1em;
+                }
+                
+                    .post-header {
+                        border-bottom: 1px dashed #dedede;
+                        padding-botton: .5em;
+                    }
+                    
+                        .post-title {
+                            font-size: 2em;
+                            line-height: 1.5em;
+                            font-weight: 700;
+                        }
+                        
+                    .post-footer {
+                        border-top: 1px solid #ccc;
+                        padding-top: .5em;
+                    }
+                    
+                        .post-meta {
+                            font-size: .8em;
+                            line-height: 1.1em;
+                            font-style: italic;
+                        }

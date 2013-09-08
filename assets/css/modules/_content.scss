@@ -44,4 +44,8 @@
             margin-top: 2em;
             color: $brand-accent-color; 
         }
+        
+        h2 + h3 {
+            margin-top: 0;
+        }
     }

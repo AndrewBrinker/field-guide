@@ -3,27 +3,45 @@
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
+
+
+.combined-code-block {
+    pre[class*="language-"] {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-top: 0;
+    
+        &:first-child {
+        	border-top: 1px dashed #ccc;
+        	margin-top: 1em;
+        }
+        &:last-child    { margin-bottom: 1em;     }
+        &:nth-child(2n) { background:    #fbfbfb; }
+    }
+}
  
 code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
 	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	font-family: $brand-mono-font;
 	font-size: 14px;
 	line-height: 1.5em;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
+	text-transform: none;
+	letter-spacing: 0;
 
 	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
 
 	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+	   -moz-hyphens: none;
+	    -ms-hyphens: none;
+	        hyphens: none;
 }
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
@@ -58,8 +76,8 @@ pre[class*="language-"] {
 
 pre[class*="language-"] {
 	background: #fff;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
+	border-top: 1px dashed #ccc;
+	border-bottom: 1px dashed #ccc;
 }
 
 /* Inline code */

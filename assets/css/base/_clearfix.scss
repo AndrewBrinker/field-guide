@@ -1,3 +1,10 @@
+/**
+ * Clearfix Partial
+ *
+ * This clearfix partial will not be included in code directly, and can't be
+ *   directly used as a class in HTML. Use @extend to include it as needed in
+ *   other classes
+ */
 %clearfix {
     &:before,
     &:after {
