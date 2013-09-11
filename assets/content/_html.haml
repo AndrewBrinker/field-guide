@@ -195,15 +195,106 @@
 %h3 Form Tags
 
 %p Another important building block of the web is the form. Forms are used day in and day out to collect information through a webpage that can then be processed, whether it&rsquo;s for signing up for Facebook, posting to Twitter, or sharing on Pinterest.
+
+%p The basic tag for forms in, unsurprisingly, the <code class='language-markup'>&lt;form&gt;</code> tag. It indicates that the form fields contained within are associated together.
     
+%p Every HTML form should have two attributes: <code class='language-markup'>action</code> and <code class='language-markup'>method</code>. <code class='language-markup'>action</code> links to the page where the form data will be processed. <code class='language-markup'>method</code> states what HTTP method will be used to transfer data between the pages. There are several different options, but the two most common are <code class='language-http'>GET</code> and <code class='language-http'>POST</code>. The first sends the data as text appended to a URL, the second as hidden data.
+
+.reference-container
+    %aside
+        %p HTML5 introduced new, useful form inputs. Learn more about them from <a href='http://html5doctor.com/html5-forms-input-types/' title='HTML5 Form Input Types' target='_blank'>the HTML5 Doctor</a>.
+    %p There are a number of different form fields, these include:
+
+%ol
+    %li
+        <code class='language-markup'>&lt;input&gt;</code>, a generic input field, it has several types:
+        %ol
+            %li <code class='language-markup'>type='text'</code>, a text input field
+            %li <code class='language-markup'>type='checkbox'</code>, a checkbox input field
+            %li <code class='language-markup'>type='radio'</code>, a radio input; only one in a group may be selected at a time.
+            %li <code class='language-markup'>type='password'</code>, a password input element. Autohides what is input into it.
+            %li <code class='language-markup'>type='submit'</code>, similar to <code class='language-markup'>&lt;button&gt;</code>.
+            %li <code class='language-markup'>type='reset'</code>, resets the contents of the current form
+            %li <code class='language-markup'>type='file'</code>, lets the user select a file to upload
+            %li <code class='language-markup'>type='hidden'</code>, creates a hidden input field
+    %li <code class='language-markup'>&lt;button&gt;</code>, generally used for inputting the contents of a form
+    %li <code class='language-markup'>&lt;select&gt;</code>, creates a list of items to be selected
+    %li <code class='language-markup'>&lt;optgroup&gt;</code>, a group of options within a <code class='language-markup'>&lt;select&gt;</code> element
+    %li <code class='language-markup'>&lt;option&gt;</code>, an individual option within a <code class='language-markup'>&lt;select&gt;</code> element
+    %li <code class='language-markup'>&lt;textarea&gt;</code>, a large text input field
+        
+%p Those are the input types you should know.
+        
+.exercise
+    %h3 Exercise 3.4
+    %p Try adding one of each of the above input types to a form on the page you&rsquo;re working on. What do you see?
+    .answer
+        %h3 Answer
+        %p You should see a collection of different but recognizable form inputs. Make sure you know which one is associated with each HTML element.
+        
+.reference-container
+    %aside
+        %p Form accessibility is an important and complicated issue. Learn more from this <a href='http://usability.com.au/2013/04/accessible-forms-1-labels-and-identification/' title='Accessible Forms, Labels, and Identification' target='_blank'>study of form usability</a>.
+    %p An important part of any form is making sure each field is labelled so that people know what the field is for. You do this with the <code class='language-markup'>&lt;label&gt;</code> element, like so:
     
+%pre
+    %code.language-markup
+        :escaped
+            <label>
+                Username: <input type='text' id='username' name='username'>
+            </label>
+            
+            <label for='username'>Username</label>
+            <input type='text' id='username' name='username'>
+                
+%p The two examples given above are equivalent, although the first one is preferable, because it makes the label clickable the same way the form field is.
+
+%p Beyond labelling your form fields, it is also important to set a tab order. This is done by giving each input element a <code class='language-markup'>tabindex</code> attribute, like this:
+
+%pre
+    %code.language-markup
+        :escaped
+            <form action='processing.php' method='POST'>
+                <label>Username: <input tabindex='1' type='text' name='username'></label>
+                <label>Password: <input tabindex='2' type='text' name='password'></label>
+                <label>Submit: <input tabindex='3' type='submit' name='submit'></label>
+            </form>
+            
+%p There are two more ways to give a form structure: the <code class='language-markup'>&lt;fieldset&gt;</code> and <code class='language-markup'>&lt;legend&gt;</code> elements. <code class='language-markup'>&lt;fieldset&gt;</code> groups associated inputs together, and <code class='language-markup'>&lt;legend&gt;</code> labels the fieldset, indicating what the grouping is.
     
+%p There are two major attributes for form inputs, <code class='language-markup'>disabled</code> and <code class='language-markup'>readonly</code>. Disabled elements can&rsquo;t be interacted with by the user. Readonly elements can be tabbed to, but can&rsquo;t be modified.
+    
+%p The issue of processing a form is beyond the scope of this chapter. Just remember that the form itself is not the whole equation. Once the data has been filled out, it has to be processed to a program that can do something with it. HTML can&rsquo;t do that, but languages like PHP, Javascript, Ruby, and Python can.
+
+%h3 The &ldquo;Div&rdquo; Element
+
+%p The final element you need to learn right now is also one of the most important: the <code class='language-markup'>&lt;div&gt;</code> element. &ldquo;<code class='language-markup'>div</code>&rdquo; stands for &ldquo;division&rdquo;, and that&rsquo;s exactly what a <code class='language-markup'>&lt;div&gt;</code> tag indicates: a semantic-less division in the document.
+    
+%p That may seem weird; haven&rsquo;t you been learning that semantic code is important? Yes, it is. That&rsquo;s why proper understanding of this tag is important. Unlike other tags, the <code class='language-markup'>&lt;div&gt;</code> element relies on a good ID and/or class attribute to indicate its use in a document. You&rsquo;ll learn more about those attributes in a bit, but for now just remember to <strong>never write a <code class='language-markup'>&lt;div&gt;</code> without an ID and/or class</strong>!
+
+%p Before moving on, let&rsquo;s review:
+
+%ol.review
+    %li.review-item
+        There are a number of different content tags
+    %li.review-item
+        Each content tag is for a specific type of content
+    %li.review-item
+        HTML forms are a complex but important part of the modern web
+    %li.review-item
+        The <code class='language-markup'>&lt;div&gt;</code> element is useful but should be used smartly
+
+
+
 
 
 
 %h2#attributes
     %a(href='#attributes' title='Attributes') Attributes
         
+.reference-container
+    %aside
+        %p To learn more, check out the MDN <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes' title='List of HTML Attributes' target='_blank'>list of HTML attributes</a>.
 %p You may have noticed that there was more than just the tags in the code examples above. Those other things are called &ldquo;attributes&rdquo;, and they are another important part of HTML. Attributes are modifiers of HTML elements. They can be used for styling an element, adding semantics to the element, improving the element's accessibility for people with disabilities, and lots of other things.
 
 %p In the <code class='language-markup'>&lt;img&gt;</code> tag example above, the tag has two attributes: <code class='language-markup'>src</code> and <code class='language-markup'>alt</code>. The first attribute tells the browser where the image is stored so that the browser can properly display it. The second attribute provides alternate text for the browser to display if it is unable to load the image.
@@ -251,6 +342,23 @@
 %h3 The &ldquo;Alt&rdquo; and &ldquo;Title&rdquo; Attributes
 
 %p There are two other common and important attributes to understand: the <code class='language-markup'>alt</code> and <code class='language-markup'>title</code> attributes. Each of them is important for a page&rsquo;s accessibility, and while they are very similar it is important to understand the differences in how they work.
+    
+.reference-container
+    %aside
+        %p Learn more about the <code class='language-markup'>alt</code> attribute from this <a href='http://accessibility.psu.edu/imageshtml' title='Images in HTML' target='_blank'>page about image accessibility</a>.
+    %p The <code class='language-markup'>alt</code> attribute provides alternative text if the element can&rsquo;t be displayed. It is mostly used on the <code class='language-markup'>&lt;img&gt;</code> tag, as images may not always be loaded (while text almost always is).
+    
+%p The <code class='language-markup'>title</code> attribute provides supplementary information to the element it is applied to. This is useful in a number of situations (like the abbreviation definitions on this site). Titles are most often used on the <code class='language-markup'>&lt;a&gt;</code> tag, to provide helpful information about whatever is being linked to.
+
+%p Beofre we move on, let&rsuo;s review:
+
+%ol.review
+    %li.review-item
+        Classes and IDs are used as styling hooks
+    %li.review-item
+        IDs can be used as fragment identifiers in a URL
+    %li.review-item
+        <code class='language-markup'>alt</code> and <code class='language-markup'>title</code> attributes greatly enhance a page&rsquo;s accessibility
     
 
 
@@ -303,6 +411,15 @@
 
 %p The fourth and final requirement of an accessible site is that content be comptable with current and future tools. This means that all documents created for the web should be consistent with current standards, and should utilize stable and well-defined specifications to make sure that support continues for the document&rsquo;s features. When developing a site, always be wary of using features that are still in beta, and about following incomplete or changing specifications. Stability is important for a good website and for accessibility, and so always make sure to use the best, most stable technology available.
 
+%p Before moving on, let&rsquo;ve review:
+
+%ol.review
+    %li.review-item
+        Web accessibility is very important
+    %li.review-item
+        Accessibility must consider a broad range of impairments
+    %li.review-item
+        Accessibility can be complicated, and often requires careful consideration before implementation
 
 
 
@@ -356,6 +473,18 @@
 
 %p However, you may not always want content to be accessible. In fact sometimes, you may not want computers to understand it at all. In which case Microformats are definitely not the answer for you.
 
+%p Before we move on, let&rsquo;s review:
+
+%ol.review
+    %li.review-item
+        Webpages should be accessible to computers as well as humans
+    %li.review-item
+        Microformats help computers process useful data
+    %li.review-item
+        Microformats make useful styling hooks to improve your webpages
+    %li.review-item
+        Microformats are still developing, but can be used right now
+
 
 
 
@@ -387,6 +516,13 @@
 
 %p Modern web developers take care to separate their concerns. To make sure that the HTML documents they write are only for content, the CSS is only for style, and the Javascript is only for dynamic changes to the site. This makes things easier to find, easier to maintain, and easier to change when you decide to redesign.
 
+%p Before we move on, let&rsquo;s review:
+
+%ol.review
+    %li.review-item
+        HTML is designed to be scalable
+    %li.review-item
+        HTML is for content, not style or dynamic behavior
 
 
 
@@ -394,7 +530,14 @@
 %h2#validation
     %a(href='#validation' title='Validation') Validation
         
-%p Validation is the process of feeding your HTML code into some software that tells you whether your code conforms to current specifications or not. It is a useful tool in the arsenal of any web developer, but know that validation is not the most important part of your development process. Validation is best used as a tool to evaluate whether you are writing things in a clear and consistent manner. However, browser often implements features that are not yet part of a specification, and therefore do not evaluate as valid code when passed through a validator. This leaves you with a problem: do you remove the features the validator doesn&rsquo;t like, or do you leave them in? The answer is to remember that while the specification exists to guide you and the browser makers, it&rsquo;s browser themselves that define what you can or can&rsquo;t use. If it works in the browsers you intend to support, and you believe your site is improved by it, then it is often a good decision to ignore the recommendations of the validator and keep the feature in.
+.reference-container
+    %aside
+        %p If you&rsquo;re interested in code validation, the <a href='http://validator.w3.org/' title='W3C HTML Validator' target='_blank'>W3C has a validator</a> you can use freely.
+    %p Validation is the process of feeding your HTML code into some software that tells you whether your code conforms to current specifications or not. It is a useful tool in the arsenal of any web developer, but know that validation is not the most important part of your development process. Validation is best used as a tool to evaluate whether you are writing things in a clear and consistent manner. However, browser often implements features that are not yet part of a specification, and therefore do not evaluate as valid code when passed through a validator. This leaves you with a problem: do you remove the features the validator doesn&rsquo;t like, or do you leave them in? The answer is to remember that while the specification exists to guide you and the browser makers, it&rsquo;s browser themselves that define what you can or can&rsquo;t use. If it works in the browsers you intend to support, and you believe your site is improved by it, then it is often a good decision to ignore the recommendations of the validator and keep the feature in.
+    
+%ol.review
+    %li.review-item
+        Validation is a useful tool, and nothing more
 
 
 
@@ -685,10 +828,43 @@
 
 %p While newer browsers support these semantically richer tags just fine, some older browsers (particularly IE8 and earlier), do not. There are ways to make these new tags work in older browsers, and it&rsquo;s up to you to decide whether to use them. Just consider what browsers you want to support, and if those browsers include older models, you may want to consider sticking with the old markup for a while.
 
+%p Before we move on, let&rsquo;s review:
+
+%ol.review
+    %li.review-item
+        HTML provides a number of semantically richer tags
+    %li.review-item
+        These tags can be used to replace semantically-null <code class='language-markup'>div</code> tags
+    %li.review-item
+        These tags require a bit of effort to work in older browsers
+        
+
+
+
+
+
+
 %h2#conclusion
     %a(href='#conclusion' title='Conclusion') Conclusion
 
 %p So that is HTML. It is a relatively simple language, but is both flexible and powerful enough to be the backbone of the modern web. Before we move on to the rest of the body, let&rsquo;s review:
+
+%ol.review
+    %li.review-item
+        HTML is the product of multiple organizations with many contributors
+    %li.review-item
+        HTML is made up of tags, also called elements
+    %li.review-item
+        HTML elements provide both structure and semantics
+    %li.review-item
+        HTML elements can have attributes that modify them
+    %li.review-item
+        Good HTML code is scalable and accessible
+    %li.review-item
+        Accessibility is important for both humans and computers
+    %li.review-item
+        Recent developments in HTML have given us semantically richer tags
+
 
                 
                 
