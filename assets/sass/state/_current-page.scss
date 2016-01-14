@@ -5,6 +5,6 @@
 /*html*/.conclusion #conclusion,
 /*html*/.resources #resources,
 /*html*/.author #author {
-    @extend .disabled;
+    pointer-events: none;
     color: $brand-accent-color;
 }

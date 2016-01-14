@@ -112,7 +112,8 @@ $gutter: em(40px);
  * External libraries
  */
 
-@import 'lib/neat';
+@import 'lib/bourbon/bourbon';
+@import 'lib/neat/neat';
 @import 'lib/prism';
 
 
