@@ -1,14 +1,181 @@
-<!-- @reload -->
-<!-- $title Front End Dev Field Guide -->
-<!-- $bodyClass intro -->
-<!-- @include _header -->
-<div class='content-wrap'>
-  <main class='content' role='main'>
-    <h1 class='title'>
-      <small>Chapter 1</small>
-      Intro
-    </h1>
-    <!-- @include intro -->
-  </main>
-</div>
-<!-- @include _footer -->
+<!DOCTYPE html>
+<html class='no-js' lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>Front End Dev Field Guide</title>
+    <meta content='An introduction to web development.' name='description'>
+    <meta content='width=device-width' name='viewport'>
+    <link href='favicon.ico' rel='shortcut icon'>
+    <link href='apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'>
+    <script src='assets/js/vendor/modernizr-2.6.2'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+    <script src='//use.typekit.net/kqc6pwp.js' type='text/javascript'></script>
+    <script type='text/javascript'>try{Typekit.load();}catch(e){}</script>
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body class='intro'>
+    <div class='no-js-warning'>
+      <p>This site requires <strong>Javascript</strong> to function.<br>Please turn on <strong>Javascript</strong> if you want to continue.<br>Sorry for the inconvenience.</p>
+      <small>&mdash; Andrew Brinker</small>
+    </div>
+    <section class='toc-container is-hidden' id='toc'>
+      <header class='toc-header'>
+        <h3>The Table of Contents</h3>
+        <a class='nav-button' data-hook='hide-toc'>Hide the Table of Contents</a>
+      </header>
+      <div class='toc'>
+        <ol>
+          <li>
+              <h4><a href='/' title='Introduction' id='intro'>Introduction</a></h4>
+              <ol>
+                  <li><a href="/#why-this-exists" title="Why This Exists">Why This Exists</a></li>
+                  <li><a href="/#who-its-for" title="Who It&#39;s For">Who It&#39;s For</a></li>
+                  <li><a href="/#paradigm-agnosticism" title="Paradigm Agnosticism">Paradigm Agnosticism</a></li>
+                  <li><a href="/#final-welcome" title="Final welcome">Final Welcome</a></li>
+              </ol>
+          </li>
+          <li>
+              <h4><a href='/browsers' title='Browsers' id='browsers'>Browsers</a></h4>
+              <ol>
+                  <li><a href="/browsers#accessing-a-page" title="Accessing a Page">Accessing a Page</a></li>
+                  <li><a href="/browsers#browser-differences" title="Browser Differences">Browser Differences</a></li>
+                  <li><a href="/browsers#browsers-and-the-spec" title="Browsers and the Spec">Browsers and the Spec</a></li>
+                  <li><a href="/browsers#rendering-engines" title="Rendering Engines">Rendering Engines</a></li>
+                  <li><a href="/browsers#caching" title="Caching">Caching</a></li>
+              </ol>
+          </li>
+          <li>
+              <h4><a href='/html' title='HyperText Markup Language' id='html'>HTML</a></h4>
+              <ol>
+                  <li><a href="/html#history" title="History of HTML">History</a></li>
+                  <li><a href="/html#tags" title="Tags">Tags</a></li>
+                  <li><a href="/html#attributes" title="Attributes">Attributes</a></li>
+                  <li><a href="/html#accessibility" title="Accessibility">Accessibility</a></li>
+                  <li><a href="/html#microformats" title="Microformats">Microformats</a></li>
+                  <li><a href="/html#scalable-html" title="Scalable HTML">Scalable HTML</a></li>
+                  <li><a href="/html#validation" title="Validation">Validation</a></li>
+                  <li><a href="/html#html5">HTML5</a></li>
+                  <li><a href="/html#conclusion">Conclusion</a></li>
+              </ol>
+          </li>
+          <li>
+              <h4><a href='/css' title='Cascading StyleSheets' id='css'>CSS</a></h4>
+              <ol>
+                  <li><a href="/css#what-styles-are" title="What Styles Are">What Styles Are</a></li>
+                  <li><a href="/css#the-cascade" title="The Cascade">The Cascade</a></li>
+                  <li><a href="/css#responsive-design" title="Responsive Design">Responsive Design</a></li>
+                  <li><a href="/css#preprocessors" title="Preprocessors">Preprocessors</a></li>
+                  <li><a href="/css#scalable-css" title="Scalable CSS">Scalable CSS</a></li>
+                  <li><a href="/css#conclusion" title="Conclusion">Conclusion</a></li>
+              </ol>
+          </li>
+          <li>
+              <h4><a href='/conclusion' title='Conclusion' id='conclusion'>Conclusion</a></h4>
+              <ol>
+                  <li><a href="/conclusion#going-further" title="Going Further">Going Further</a></li>
+              </ol>
+          </li>
+          <li>
+              <h4><a href='/resources' title='Resources' id='resources'>Resources</a></h4>
+          </li>
+          <li>
+              <h4><a href='/author' title='About the Author' id='author'>About the Author</a></h4>
+          </li>
+      </ol>
+      </div>
+    </section>
+    <header class='header' role='banner'>
+      <h1 class='logo'>
+        <a href='/' title='Web Development, A Field Guide'>
+          <mark>Front&nbsp;End&nbsp;Development:</mark>
+          A&nbsp;Field&nbsp;Guide
+        </a>
+      </h1>
+      <nav class='page-nav' role='navigation'>
+        <a class='nav-button' data-hook='show-toc'>View the Table of Contents</a>
+      </nav>
+    </header>
+
+    <div class='content-wrap'>
+      <main class='content' role='main'>
+        <h1 class='title'>
+          <small>Chapter 1</small>
+          Intro
+        </h1>
+        <p class='lede'>Welcome to a grand new adventure!</p>
+        <h2 id='why-this-exists'>
+          <a href='#why-this-exists' title='Why This Exists'>Why This Exists</a>
+        </h2>
+        <div class='reference-container'>
+          <aside>
+            <p>That old work was deleted with the death of the forums I used, or else I'd share it here.</p>
+          </aside>
+          <p>Starting as a web developer can be a difficult thing. I started at twelve, futzing around with <abbr title='Cascading Style Sheets'>CSS</abbr> for a forum I&rsquo;d made, marshaling <abbr title='HyperText Markup Language'>HTML</abbr> tables into something resembling a coherent site. My knowledge was built on Google searches, W3Schools reading, and experimentation. Most of it was bad.</p>
+        </div>
+        <p>By the time I started really getting into web development; really trying to learn how to do things <strong>right</strong>, I was way far gone. I've spent a lot time since then unlearning what I'd always thought was right.</p>
+        <div class='reference-container'>
+          <aside>
+            <p>If you're looking for good reference material, try the <a href='/resources' title='Resources' target='_blank'>resources</a> page.</p>
+          </aside>
+          <p>Things don't have to be that way, and in creating this field guide, it is my hope that you learn from my mistakes. What I share here is not a complete catalogue of all things HTML and CSS, nor it is a how-to on designing a blog or opening an online store. The field guide exists to take you, the coder, the hacker, the hobbyist, the reader, and make you into a real life Front End Developer.</p>
+        </div>
+        <p>How does it start? Repeat after me: "I am a web developer".</p>
+        <p>"I am a web developer", "I am a web developer", "I am a web developer", "I am a web developer".</p>
+        <p>Have you said it?</p>
+        <p>Congratulations. You're a web developer.</p>
+        <p>That's the great thing about the web, anyone can use it. But being a <strong>good</strong> web developer takes more. This field guide exists to teach you the practices, paradigms, concepts, and language that'll make you a real creator of web experiences.</p>
+        <h2 id='who-its-for'>
+          <a href='#who-its-for' title="Who It's For">Who It&rsquo;s For</a>
+        </h2>
+        <div class='reference-container'>
+          <aside>
+            <p>Answer: <strong>You</strong></p>
+          </aside>
+          <p>This book is for anyone and everyone interested in web development. The web is a platform of equal opportunity, and this book is written with readers' varying skills in mind. If you are worried about not knowing enough, or not being ready, don&rsquo;t worry.</p>
+        </div>
+        <p>This book is also for more experienced developers looking to brush up or grow their knowledge. If you are a more advanced developer you may want to try the advanced topics or peruse the <a href='/resources' title='Resources' target='_blank'>resources</a> section.</p>
+        <h2 id='paradigm-agnosticism'>
+          <a href='#paradigm-agnosticism' title='Paradigm Agnosticism'>Paradigm Agnosticism</a>
+        </h2>
+        <div class='reference-container'>
+          <aside>
+            <p>The title says it all.</p>
+          </aside>
+          <p>At various points in this book I will make reference to or discuss varying paradigms for web development. At no point should this be considered an endorsement of a given paradigm. It is my firm belief that the best paradigm is the one that works best for you. What I may find preferable may be bad for you, your project, or your team, and so paradigms should never be dictated by dogma.</p>
+        </div>
+        <h2 id='final-welcome'>
+          <a href='#final-welcome' title='Final Welcome'>Final Welcome</a>
+        </h2>
+        <p>With all that out of the way, prepare to enter the wilds of web development. Bring your paper, your pencil, and be ready to learn. This book may move quickly at times, but never feel pressured to move quicker than you're ready for. If something isn&rsquo;t clear <a href='/author' title='Meet the Author' target='_blank'>email me</a>, I am always happy to help.</p>
+        <a class='button block' href='/browsers' title='Browsers'>Next Chapter: Browsers &rarr;</a>
+      </main>
+    </div>
+
+    <footer class='footer-container'>
+      <a class='nav-button' data-hook='show-toc'>View the Table of Contents</a>
+      <div class='footer'>
+        <div class='about vcard'>
+          <p>The Web Development Field Guide is a project by <a class='url fn' href='/author' target='_blank' title='Meet the Author'>Andrew Brinker</a>, &copy; 2013 all rights reserved.</p>
+        </div>
+        <div class='footer-notes'>
+          <p>You are reading <span class='version-number'>version 1.0</span> of the field guide. It is stable for now, but the next major version is in the works.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-13250048-8');ga('send','pageview');
+    </script>
+
+  </body>
+</html>
