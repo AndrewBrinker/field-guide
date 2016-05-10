@@ -26,34 +26,47 @@ opening an online store. The field guide exists to take you, the coder, the
 hacker, the hobbyist, the reader, and make you into a real life Front End
 Developer.
 
-        <p>How does it start? Repeat after me: "I am a web developer".</p>
-        <p>"I am a web developer", "I am a web developer", "I am a web developer", "I am a web developer".</p>
-        <p>Have you said it?</p>
-        <p>Congratulations. You're a web developer.</p>
-        <p>That's the great thing about the web, anyone can use it. But being a <strong>good</strong> web developer takes more. This field guide exists to teach you the practices, paradigms, concepts, and language that'll make you a real creator of web experiences.</p>
-        <h2 id='who-its-for'>
-          <a href='#who-its-for' title="Who It's For">Who It&rsquo;s For</a>
-        </h2>
-        <div class='reference-container'>
-          <aside>
-            <p>Answer: <strong>You</strong></p>
-          </aside>
-          <p>This book is for anyone and everyone interested in web development. The web is a platform of equal opportunity, and this book is written with readers' varying skills in mind. If you are worried about not knowing enough, or not being ready, don&rsquo;t worry.</p>
-        </div>
-        <p>This book is also for more experienced developers looking to brush up or grow their knowledge. If you are a more advanced developer you may want to try the advanced topics or peruse the <a href='/resources' title='Resources' target='_blank'>resources</a> section.</p>
-        <h2 id='paradigm-agnosticism'>
-          <a href='#paradigm-agnosticism' title='Paradigm Agnosticism'>Paradigm Agnosticism</a>
-        </h2>
-        <div class='reference-container'>
-          <aside>
-            <p>The title says it all.</p>
-          </aside>
-          <p>At various points in this book I will make reference to or discuss varying paradigms for web development. At no point should this be considered an endorsement of a given paradigm. It is my firm belief that the best paradigm is the one that works best for you. What I may find preferable may be bad for you, your project, or your team, and so paradigms should never be dictated by dogma.</p>
-        </div>
-        <h2 id='final-welcome'>
-          <a href='#final-welcome' title='Final Welcome'>Final Welcome</a>
-        </h2>
-        <p>With all that out of the way, prepare to enter the wilds of web development. Bring your paper, your pencil, and be ready to learn. This book may move quickly at times, but never feel pressured to move quicker than you're ready for. If something isn&rsquo;t clear <a href='/author' title='Meet the Author' target='_blank'>email me</a>, I am always happy to help.</p>
-        <a class='button block' href='/browsers' title='Browsers'>Next Chapter: Browsers &rarr;</a>
-      </main>
-    </div>
+How does it start? Repeat after me: "I am a web developer".
+
+"I am a web developer", "I am a web developer", "I am a web developer", "I am a
+web developer".
+
+Have you said it?
+
+Congratulations. You're a web developer.
+
+That's the great thing about the web, anyone can use it. But being a __good__
+web developer takes more. This field guide exists to teach you the practices,
+paradigms, concepts, and language that'll make you a real creator of web
+experiences.
+
+## Who It's For
+
+<aside><p>Answer: <strong>You</strong></p></aside>
+
+This book is for anyone and everyone interested in web development. The web is
+a platform of equal opportunity, and this book is written with readers' varying
+skills in mind. If you are worried about not knowing enough, or not being ready,
+don't worry.
+
+This book is also for more experienced developers looking to brush up or grow
+their knowledge. If you are a more advanced developer you may want to try the
+advanced topics or peruse the [resources](/resources) section.
+
+## Paradigm Agnosticism
+
+<aside><p>The title says it all.</p></aside>
+
+At various points in this book I will make reference to or discuss varying
+paradigms for web development. At no point should this be considered an
+endorsement of a given paradigm. It is my firm belief that the best paradigm is
+the one that works best for you. What I may find preferable may be bad for you,
+your project, or your team, and so paradigms should never be dictated by dogma.
+
+## Final Welcome
+
+With all that out of the way, prepare to enter the wilds of web development.
+Bring your paper, your pencil, and be ready to learn. This book may move
+quickly at times, but never feel pressured to move quicker than you're ready
+for. If something isn't clear [email me](/author), I am always happy to help.
+
